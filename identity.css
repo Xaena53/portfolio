@@ -4,15 +4,13 @@
    BÇ monogram, Xaena53 stamp, numbered sections, asymmetric work,
    commit-log contributions.
    ------------------------------------------------------------ */
-:root { --accent2: var(--accent); --line: rgba(0,0,0,.045); }
-:root[data-theme="dark"] { --line: rgba(255,255,255,.035); }
+:root { --accent: #8C7656; --onaccent: #FFFFFF; --accent2: var(--accent); --line: rgba(0,0,0,.03); }
+:root[data-theme="dark"] { --accent: #C2AD8A; --onaccent: #141414; --line: rgba(255,255,255,.022); }
 
 body { position: relative; isolation: isolate; }
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; }
 body::before {
   background: repeating-linear-gradient(135deg, transparent 0 26px, var(--line) 26px 27px);
-  -webkit-mask-image: radial-gradient(120% 90% at 20% 0%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%);
-          mask-image: radial-gradient(120% 90% at 20% 0%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%);
 }
 
 /* Top strip: part of the page, scrolls away with it */
@@ -87,3 +85,8 @@ main { counter-reset: sec; }
   .sec__title::after { display: none; }
 }
 
+
+.motif { display: none; }
+.sk1, .loop__n, .hero__links a:first-child { color: var(--onaccent) !important; }
+
+.hero { background: none !important; box-shadow: none !important; border: 0 !important; border-radius: 0; }
