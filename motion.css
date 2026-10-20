@@ -1,0 +1,74 @@
+/* ============================================================
+   Motion — buttons, page intro, scroll reveals, parallax
+   ------------------------------------------------------------ */
+/* Buttons and links */
+.hero__links a, .log__link, .case__head a, .strip__gh, .seg button, .theme, .sk, .more summary, .foot a {
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), background-color .25s, color .25s, border-color .25s;
+}
+.hero__links a { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; background: none; overflow: hidden; isolation: isolate; border: 1px solid var(--hair); }
+.hero__links a:first-child { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 8px 24px -10px var(--accent); }
+.hero__links a::after { content: "→"; transition: transform .35s var(--ease); }
+.hero__links a::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%); transform: translateX(-120%); transition: transform .7s var(--ease); }
+.hero__links a:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -12px var(--accent); color: inherit; }
+.hero__links a:first-child:hover { color: #fff; }
+.hero__links a:hover::before { transform: translateX(120%); }
+.hero__links a:hover::after { transform: translateX(4px); }
+.hero__links a:active { transform: translateY(0) scale(.97); }
+.strip__gh:hover, .theme:hover { transform: translateY(-2px); }
+.seg button:active, .theme:active { transform: scale(.92); }
+.sk { cursor: default; }
+.sk:hover { transform: translateY(-4px) rotate(-1.5deg); box-shadow: var(--pop); }
+.pills__row .sk:nth-child(even):hover { transform: translateY(-4px) rotate(1.5deg); }
+.sk__n { transition: transform .5s var(--ease); }
+.sk:hover .sk__n { transform: rotate(360deg); }
+.log__link:hover, .case__head a:hover { transform: translateX(4px); }
+.more summary:hover { color: var(--accent); }
+.tile__img { transition: box-shadow .5s var(--ease), transform .5s var(--ease); }
+.tile:hover .tile__img { transform: translateY(-6px); box-shadow: 0 30px 60px -28px color-mix(in srgb, var(--accent) 60%, transparent); }
+.row { transition: background-color .3s, padding .4s var(--ease); border-radius: 12px; }
+.row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); padding-left: 12px; padding-right: 12px; }
+.row__thumb { transition: transform .4s var(--ease); }
+.row:hover .row__thumb { transform: rotate(-3deg) scale(1.05); }
+.loop__n { transition: transform .5s var(--ease); }
+.loop__row:hover .loop__n { transform: scale(1.12) rotate(-8deg); }
+.seal { transition: transform .8s var(--ease); }
+.seal:hover { transform: rotate(-10deg) scale(1.03); }
+
+/* Page intro */
+@keyframes rise { from { opacity: 0; transform: translateY(28px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes stampIn { 0% { opacity: 0; transform: rotate(7deg) scale(1.8); } 70% { opacity: 1; transform: rotate(7deg) scale(.92); } 100% { transform: rotate(7deg) scale(1); } }
+.js .hero__name { animation: rise .9s var(--ease) both; }
+.js .hero__sub { animation: rise .9s var(--ease) .12s both; }
+.js .idcard { animation: rise .9s var(--ease) .24s both; }
+.js .idcard::after { animation: stampIn .7s var(--ease) 1s both; }
+.js .hero__list li { animation: rise .8s var(--ease) both; }
+.js .hero__list li:nth-child(1) { animation-delay: .32s; }
+.js .hero__list li:nth-child(2) { animation-delay: .42s; }
+.js .hero__list li:nth-child(3) { animation-delay: .52s; }
+.js .hero__lead, .js .hero__links { animation: rise .8s var(--ease) .62s both; }
+.js .hero::before { animation: draw 1.6s var(--ease) .2s both; }
+.js .strip__in { animation: rise .7s var(--ease) both; }
+
+/* Scroll reveals (classes set by motion.js) */
+.js .rv { opacity: 0; transform: translateY(36px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+.js .rv--l { transform: translateX(-40px); }
+.js .rv--r { transform: translateX(40px); }
+.js .rv--z { transform: scale(.94); }
+.js .rv.in { opacity: 1; transform: none; }
+.js .sec__title::after { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s var(--ease) .2s; }
+.js .sec__title.in::after { transform: scaleX(1); }
+.js .log__row::before { transform: scale(0); transition: transform .5s var(--ease) calc(var(--d, 0s) + .3s); }
+.js .log__row.in::before { transform: scale(1); }
+
+/* Legacy reveal from script.js stays neutral */
+.js .reveal { opacity: 1; transform: none; }
+
+/* Parallax targets */
+.hero::before { translate: 0 var(--py, 0); }
+.band__q { translate: 0 var(--by, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv { opacity: 1; transform: none; }
+}

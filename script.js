@@ -6,15 +6,19 @@
 
   /* ---------------- i18n (EN is the HTML source, TR below) ---------------- */
   var TR = {
+    'nav.contrib': 'Katkılar', 'cb.h': 'Katkılar', 'cb.sub': 'Başka ekiplerin yönettiği projelere gönderdiğim değişiklikler.',
+    'cb.merged': 'Birleştirildi', 'cb.open': 'İncelemede',
+    'cb1.p': 'FindInput ve ReplaceInput içinde tekrarlanan ok tuşu ve Escape davranışı artık tek bir ortak yardımcıda; beş yeni birim testiyle korunuyor. #199892 numaralı kaydı kapatıyor.',
+    'cb2.p': 'NASA’nın görev kontrol çatısı için bir düzeltme: grafik görünümü, Y ekseni etiketi değiştiği anda etiketi yeniler.',
     // Eksik kalan TR metinleri (2026-10-20)
-    'nav.skills': 'Yetenekler', 'hero.sub': 'Kurucu Ortak ve Backend Geliştirici', 'id.cap': 'Profil kaydı',
+    'nav.skills': 'Yetenekler', 'hero.sub': 'Backend Geliştirici', 'id.cap': 'Profil kaydı',
     'rec.edu': 'Eğitim', 'rec.edu.v': 'Anadolu Üniversitesi, ön lisans',
     'hero.l1': 'Backend geliştirme', 'hero.l2': 'Yapay zekâ ve dağıtık sistemler', 'hero.l3': 'Bilgisayarlı görü ve ajan güvenliği',
     'pr.lead': 'Kurduğum her sistemde bir şeye güvenilmesi gereken bir an vardır: bir ajanın onayı, bir kamera karesi, bir ödeme. Önce o anı tasarlarım ve hâlâ bitmemiş olanı yazıya dökerim.',
     'more': 'Ayrıntılar',
     'ar.aim': 'Backend tarafında 49 Jest test grubu. Hedef: Teknopark desteğiyle platformu küresel ölçeğe taşımak.',
     'as.facts': 'Hedef: Eskişehir pilotu, ardından on iki haftada beş otobüs. Model v3, mAP50 0.660; çok geçişli yakalama %87,1 (saha hedefi %85). 7 aşamanın 5.si.',
-    'work.more': 'Diğer işler', 'q.h': 'Bilinmeyen asla <em>temiz</em> değildir.', 'q.s': 'Göremediğinde açılan kapı, kapı değildir.',
+    'work.more': 'Diğer işler', 'q.h': 'Bilinmeyen, <em>dur</em> demektir.', 'q.s': 'Kapı yalnızca görebildiğinde açılır.',
     'sk1': 'Backend geliştirme', 'sk2': 'Yapay zekâ ve görü', 'sk3': 'Dağıtık sistemler', 'sk4': 'Veri ve önbellekleme', 'sk5': 'Yayına alma', 'sk6': 'Entegrasyonlar',
     'wd.h': 'Ne yapıyorum', 'wd1.h': 'Backend ve API’ler',
     'wd1.p': 'Node.js ve Python servisleri, REST ve GraphQL API’leri; PostgreSQL, MongoDB ve Redis — sorgular hızlanana kadar ayarlanmış.',
@@ -22,21 +26,21 @@
     'wd2.p': 'YOLO hatları, GPS harita eşleme, MCP sunucuları ve LLM araçları; gizlilik kuralları kodda uygulanır.',
     'wd3.h': 'Dağıtık medya sistemleri',
     'wd3.p': 'P2P ve hibrit dağıtım, HLS hatları, içerik doğrulama ve ölçeklenen mikroservisler.',
-    'ex1.d': 'SYBERY · AnimeRank. Yapay zekâ destekli bir medya platformunun mimarisi, backend’i, verisi ve yayını.',
+    'ex1.d': 'AnimeRank. Yapay zekâ destekli bir medya platformunun mimarisi, backend’i, verisi ve yayını.',
     'ex2.d': 'Node.js, Python ve PostgreSQL backend’leri. Redis önbelleği sorgu süresini %60 kısalttı.',
     'ex.more': 'Tüm sorumluluklar', 'ct.loc': 'Konum', 'ct.lang': 'Diller', 'ct.cvd': 'PDF indir',
     'skip': 'İçeriğe geç',
     'nav.work': 'Projeler', 'nav.open': 'Açık kaynak', 'nav.experience': 'Deneyim',
     'nav.practice': 'Yaklaşım', 'nav.stack': 'Teknolojiler', 'nav.education': 'Eğitim', 'nav.contact': 'İletişim',
 
-    'hero.now': 'SYBERY kurucu ortağı, AnimeRank\'i geliştiriyor',
+    'hero.now': 'AnimeRank\'i geliştiriyor',
     'hero.role': 'Güvenilmesi gereken yapay zeka ve dağıtık sistemler kuran backend geliştirici.',
     'hero.lead': 'AnimeRank\'in teknik tarafını yönetiyor, şehir otobüsleri için yol hasarı tespiti, para harcayan ajanlar için bir güvenlik kapısı ve canlıda çalışan bir eğitim platformu geliştiriyorum. Doğrulama, denetim kayıtları ve dürüst durum bilgisi, özelliklerden önce gelir.',
     'hero.cta1': 'Seçili projeler',
     'hero.cta2': 'CV indir',
     'map.note': 'Asfalya hasar haritasının şematik gösterimi. Sentetik veri.',
 
-    'rec.name': 'Ad', 'rec.role': 'Rol', 'rec.role.v': 'SYBERY kurucu ortağı ve teknik lider',
+    'rec.name': 'Ad', 'rec.role': 'Rol', 'rec.role.v': 'AnimeRank kurucusu ve tek geliştiricisi',
     'rec.loc': 'Konum', 'rec.loc.v': 'Eskişehir, Türkiye',
     'rec.focus': 'Odak', 'rec.focus.v': 'Backend, yapay zeka ve dağıtık sistemler',
     'rec.lang': 'Diller', 'rec.lang.v': 'Türkçe, İngilizce',
@@ -50,10 +54,10 @@
     'work.h': 'Seçili projeler',
     'work.sub': 'Özel depolar, göstereceğim sırayla.',
 
-    'ar.tag': 'SYBERY çatısı altında kurulan, Türkçe öncelikli anime platformu.',
-    'ar.p1': 'Aranabilir bir katalog, hibrit P2P ve HLS oynatıcı, cihazlar arası izleme takibi ve topluluk katmanı; baştan sona kontrol ettiğimiz bir altyapıda. Türkçe asıl dil, İngilizce tam bir ikinci dil. Kurucu ortağıyım; mimariyi, backend\'i ve teslimatı ben yönetiyorum.',
+    'ar.tag': 'Tek başıma geliştirdiğim, Türkçe öncelikli anime platformu.',
+    'ar.p1': 'Aranabilir bir katalog, hibrit P2P ve HLS oynatıcı, cihazlar arası izleme takibi ve topluluk katmanı; baştan sona kontrol ettiğim bir altyapıda. Türkçe asıl dil, İngilizce tam bir ikinci dil. Kurucu ortağıyım; mimariyi, backend\'i ve teslimatı ben yönetiyorum.',
     'ar.p2': 'Arkasında şunlar var: Node.js REST backend, sorgu iyileştirmeleriyle SQLite\'tan PostgreSQL\'e geçiş, büyük ölçekli metadata toplama ve indeksleme, içerik doğrulama ve medya eşleştirme motorları ve mikroservis tabanlı bir servis katmanı. Eşler arası hibrit dağıtım ve yapay zeka destekli medya işleme hatları Ar-Ge aşamasında.',
-    'ar.k1': 'Rol', 'ar.v1': 'Kurucu ortak ve teknik lider, 2025\'ten bugüne',
+    'ar.k1': 'Rol', 'ar.v1': 'Kurucu ve tek geliştirici, 2025\'ten bugüne',
     'ar.k2': 'Kalite', 'ar.v2': 'Backend\'de 49 Jest test paketi',
     'ar.k3': 'Hedef', 'ar.v3': 'Platformu Teknopark desteğiyle küresel ölçeğe taşımak',
 
@@ -79,8 +83,8 @@
     'ku.tag': 'Anime altyazı çeviri servisi.',
     'ku.p': 'Videoya dokunmadan .ass altyazı üretir: ses zamanlaması, ekran yazılarının OCR\'ı ve sekiz dilde kültürel bağlama uygun Türkçe çeviri. Değiştirilebilir servis katmanı, P2P oynatıcılar için altyazı önbelleği, önceden ısıtma kuyrukları ve pilot işletim rehberi.',
 
-    'rc.tag': 'Canlı destek: "kokpit değil, konuşma."',
-    'rc.p': 'Express ve Socket.IO geçidi, iframe arayüzlü 5 KB\'lık widget yükleyici, ziyaretçi kartlı operatör gelen kutusu ve tüm akışı baştan sona çalıştıran dokuz adımlı uçtan uca test.',
+    'rc.tag': 'Konuşmayı merkeze alan canlı destek.',
+    'rc.p': 'Konuşmayı merkeze alan canlı destek: Express ve Socket.IO geçidi, iframe arayüzlü 5 KB\'lık widget yükleyici, ziyaretçi kartlı operatör gelen kutusu ve dokuz adımlı uçtan uca test.',
 
     'wf.tag': 'Birinci şahıs açık dünya hayatta kalma oyunu.',
     'wf.p': 'Unreal Engine 5 ve C++. Hayatta kalma ihtiyaçları, gündüz köy yönetimi ve gece savunması; nihai varlıklar olmadan çalışan veriye dayalı sistemler, ilk kilometre taşından itibaren otomasyon testleri ve CI ile. Şu an M12\'nin M0 aşamasında.',
@@ -91,7 +95,7 @@
 
     'ag.tag': 'Para harcayan yapay zeka ajanları için ağ doğrulamalı güven.',
     'ag.p1': 'Gerçek Google Ads ve Meta kampanyalarını sunucu tarafı harcama korumalarının ardında yöneten bir MCP sunucusu. Bir insana onay sorulmadan önce mobil ağa (GSMA Open Gateway ve CAMARA, Nokia Network-as-Code üzerinden) onaylayanın hattının ele geçirilip geçirilmediğini sorar.',
-    'ag.p2': 'Ajanın kendi confirm bayrağı her yolda yok sayılır. Onay, ajanın anlattığı bir hikâye olmaktan çıkar, sunucunun doğrulayabildiği bir olguya dönüşür.',
+    'ag.p2': 'Ajanın kendi onay bayrağı her yolda yok sayılır. Onay, sunucunun doğruladığı bir olgudur.',
     'ag.k1': 'Test', 'ag.v1': 'satır kapsamı', 'ag.k2': 'Teknoloji', 'ag.k3': 'Lisans',
     'ag.chain': 'Güven zinciri ve bugün gerçekte geldiği nokta',
     'ag.th1': 'Sinyal', 'ag.th2': 'Yanıtladığı soru', 'ag.th3': 'Durum',
@@ -107,8 +111,8 @@
 
     'ex.h': 'Deneyim',
     'ex1.when': '2025 — devam ediyor',
-    'ex1.h': 'Kurucu ortak ve teknik lider',
-    'ex1.org': 'SYBERY · AnimeRank',
+    'ex1.h': 'Kurucu ve tek geliştirici',
+    'ex1.org': 'AnimeRank',
     'ex1.b1': 'Yapay zeka destekli bir medya teknolojileri platformunun mimarisi, geliştirme sürecinin yönetimi ve teknik liderliği.',
     'ex1.b2': 'Yüksek performanslı Node.js backend ve RESTful API geliştirildi.',
     'ex1.b3': 'Veri katmanı SQLite\'tan PostgreSQL\'e taşındı, sorgu performansı iyileştirildi.',
@@ -125,10 +129,10 @@
 
     'pr.h': 'Yaklaşım',
     'pr.sub': 'Her depoda karşınıza çıkan alışkanlıklar.',
-    't1.h': 'Beyan edilmez, doğrulanır.',
-    't1.p': 'Rıza, bir ajanın söylediği şey değil, sunucunun kontrol edebildiği bir olgudur. Onay protokol üzerinden alınır, ajanın kendi bayrağına asla güvenilmez.',
-    't2.h': 'Bilinmeyen asla temiz sayılmaz.',
-    't2.p': 'Token yokluğu, sessiz bir uç nokta ya da okunamayan bir yanıt reddle biter. Göremediğinde açılan bir kapı, kapı değildir.',
+    't1.h': 'Onayı sunucu doğrular.',
+    't1.p': 'Onay protokol üzerinden gelir ve sunucu tarafından doğrulanır. Ajanın kendi onay bayrağının hiçbir ağırlığı yoktur.',
+    't2.h': 'Bilinmeyen, dur demektir.',
+    't2.p': 'Eksik token, sessiz bir uç nokta ya da okunamayan bir yanıt retle sonuçlanır. Kapı yalnızca görebildiğinde açılır.',
     't3.h': 'Kurallar kodda yaşar.',
     't3.p': 'Unutulabilen bir gizlilik kuralı unutulur. Asfalya maskelenmemiş kareleri bir kontrol listesine güvenmeden, istisna fırlatarak reddeder.',
     't4.h': 'Yapılmayanı söyle.',
@@ -174,8 +178,8 @@
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
     document.title = lang === 'tr'
-      ? 'Bedirhan Çetin — Kurucu Ortak ve Backend Geliştirici'
-      : 'Bedirhan Çetin — Co-founder & Backend Developer';
+      ? 'Bedirhan Çetin — Backend Geliştirici'
+      : 'Bedirhan Çetin — Backend Developer';
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
@@ -198,7 +202,7 @@
   paintMeta();
 
   /* ---------------- reveal on scroll ---------------- */
-  var reveals = document.querySelectorAll('.sec__title, .tile, .row, .case, .loop__row, .stack, .contact');
+  var reveals = document.querySelectorAll(".__none");
   reveals.forEach(function (el) { el.classList.add('reveal'); });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
