@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bedirhan Çetin — Co-founder &amp; Backend Developer</title>
+  <meta name="description" content="Bedirhan Çetin is a backend developer and co-founder of AnimeRank at SYBERY, building AI and distributed systems: media platforms, road-damage detection, agent safety. Eskişehir, Türkiye.">
+  <meta property="og:title" content="Bedirhan Çetin — Co-founder &amp; Backend Developer">
+  <meta property="og:description" content="Backend, AI and distributed systems that have to be trusted. Co-founder of AnimeRank at SYBERY.">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#222B4D">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    // Resolve theme and language before first paint to avoid a flash.
+    (function () {
+      var t = null, l = null;
+      try { t = localStorage.getItem('theme'); l = localStorage.getItem('lang'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      if (!l) l = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+      document.documentElement.setAttribute('lang', l);
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- Contact strip -->
+  <header class="strip">
+    <div class="wrap strip__in">
+      <a class="strip__mail" href="mailto:bedometom@gmail.com">bedometom@gmail.com</a>
+      <nav class="strip__nav" aria-label="Primary">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#open" data-i18n="nav.open">Open source</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="strip__tools">
+        <div class="seg" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="tr">TR</button>
+        </div>
+        <button type="button" class="theme" id="theme-toggle" aria-label="Toggle colour theme">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <a class="strip__gh" href="https://github.com/Xaena53" target="_blank" rel="noopener">@Xaena53</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero wrap" id="top">
+      <h1 class="hero__name">Bedirhan Çetin</h1>
+      <p class="hero__sub" data-i18n="hero.sub">Co-founder &amp; Backend Developer</p>
+
+      <div class="hero__row">
+        <figure class="idcard" aria-label="Profile record">
+          <img class="idcard__photo" src="assets/portrait.jpg" alt="Bedirhan Çetin" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+          <div class="idcard__body">
+            <p class="idcard__cap mono"><span class="karo"><span>BÇ</span></span><span data-i18n="id.cap">Profile record</span></p>
+            <dl class="idcard__rows">
+              <div><dt data-i18n="rec.name">Name</dt><dd>Bedirhan Çetin</dd></div>
+              <div><dt data-i18n="rec.role">Role</dt><dd data-i18n="rec.role.v">Co-founder and technical lead, SYBERY</dd></div>
+              <div><dt data-i18n="rec.loc">Location</dt><dd data-i18n="rec.loc.v">Eskişehir, Türkiye</dd></div>
+              <div><dt data-i18n="rec.edu">Education</dt><dd data-i18n="rec.edu.v">Anadolu University, associate degree</dd></div>
+              <div><dt data-i18n="rec.lang">Languages</dt><dd data-i18n="rec.lang.v">Turkish, English</dd></div>
+            </dl>
+          </div>
+        </figure>
+
+        <div class="hero__side">
+          <ul class="hero__list">
+            <li data-i18n="hero.l1">Backend development</li>
+            <li data-i18n="hero.l2">AI &amp; distributed systems</li>
+            <li data-i18n="hero.l3">Computer vision &amp; agent safety</li>
+          </ul>
+          <p class="hero__lead" data-i18n="hero.lead">I lead the technical side of AnimeRank and build road-damage detection for city buses, a safety gate for agents that spend money, and an education platform in production.</p>
+          <p class="hero__links">
+            <a class="uline" href="mailto:bedometom@gmail.com" data-i18n="hero.cta1">Work with me</a>
+            <a class="uline" href="Bedirhan-Cetin-CV.pdf" download data-i18n="hero.cta2">Download CV</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="sec wrap" id="practice" aria-labelledby="practice-h">
+      <h2 class="sec__title" id="practice-h" data-i18n="pr.h">How I work</h2>
+      <div class="split">
+        <p class="lede" data-i18n="pr.lead">Every system I build has a moment where something has to be trusted: an agent's approval, a camera frame, a payment. I design that moment first, and I write down what is still unfinished.</p>
+        <ol class="tenets">
+          <li><span class="num mono">01</span><div><h3 data-i18n="t1.h">Verified, not claimed.</h3><p data-i18n="t1.p">Consent is something a server can check, not a statement an agent makes. Approval goes through the protocol and the agent's own flag is never trusted.</p></div></li>
+          <li><span class="num mono">02</span><div><h3 data-i18n="t2.h">Unknown is never clean.</h3><p data-i18n="t2.p">No token, a silent endpoint or an unreadable answer ends in refusal. A gate that opens when it cannot see is not a gate.</p></div></li>
+          <li><span class="num mono">03</span><div><h3 data-i18n="t3.h">Rules live in code.</h3><p data-i18n="t3.p">A privacy rule that can be forgotten will be. Asfalya rejects unmasked frames with an exception instead of relying on a checklist.</p></div></li>
+          <li><span class="num mono">04</span><div><h3 data-i18n="t4.h">Say what is not done.</h3><p data-i18n="t4.p">Every repository carries a status table with its open items: a recall target missed, a link that is simulation only, a legal permission folder that is still empty.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="sec wrap" id="work" aria-labelledby="work-h">
+      <h2 class="sec__title" id="work-h" data-i18n="work.h">Selected work</h2>
+      <p class="sec__sub" data-i18n="work.sub">Private repositories, in the order I would show them.</p>
+
+      <div class="trio">
+        <!-- AnimeRank -->
+        <article class="tile">
+          <div class="tile__img"><img src="assets/animerank-gateway.jpg" alt="AnimeRank landing page, shown in greyscale" loading="lazy"></div>
+          <h3>AnimeRank</h3>
+          <p class="tile__tag" data-i18n="ar.tag">A Turkish-first anime platform, founded under SYBERY.</p>
+          <p class="tile__meta mono"><i class="dot dot--warn" aria-hidden="true"></i><span data-i18n="s.pre">Pre-launch</span><span class="sep">·</span><span data-i18n="priv">Private repository</span></p>
+          <details class="more">
+            <summary data-i18n="more">Details</summary>
+            <p data-i18n="ar.p1">A searchable catalogue, a hybrid P2P and HLS player, cross-device watch progress and a community layer, on infrastructure we control end to end. Turkish is the canonical locale and English a full second one. I co-founded it and own the architecture, the backend and the delivery.</p>
+            <p data-i18n="ar.p2">Behind it: a Node.js REST backend, a migration from SQLite to PostgreSQL with tuned queries, large-scale metadata collection and indexing, content-verification and media-matching engines, and a microservice-based service layer. Peer-to-peer hybrid distribution and AI-assisted media pipelines are in research and development.</p>
+            <p class="mono small" data-i18n="ar.aim">49 Jest suites on the backend. Aim: take the platform global with Technopark support.</p>
+            <p class="mono small">Node.js · PostgreSQL · MongoDB Atlas · HLS · ffmpeg</p>
+          </details>
+        </article>
+
+        <!-- Asfalya -->
+        <article class="tile">
+          <div class="tile__img tile__img--map">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="map-t">
+              <title id="map-t">Schematic road-damage map with a bus route and severity markers. Synthetic data.</title>
+              <rect class="m-bg" width="400" height="500"/>
+              <g class="m-streets" fill="none">
+                <path d="M-10 110 L410 90"/><path d="M-10 240 L410 255"/><path d="M-10 380 L410 360"/>
+                <path d="M60 -10 L80 510"/><path d="M180 -10 L165 510"/><path d="M290 -10 L305 510"/>
+                <path d="M-10 170 Q150 150 240 205 T410 185" class="m-minor"/>
+                <path d="M110 510 Q140 400 220 330 T360 270" class="m-minor"/>
+              </g>
+              <path class="m-route" d="M-10 245 L100 250 L170 248 L298 258 L298 362 L410 360" fill="none"/>
+              <g class="m-pins">
+                <circle class="s0" cx="72" cy="249" r="5"/><circle class="s1" cx="130" cy="250" r="5"/>
+                <circle class="s2" cx="230" cy="254" r="6"/><circle class="s1" cx="298" cy="312" r="5"/>
+                <circle class="s3" cx="352" cy="360" r="7"/><circle class="s2" cx="170" cy="150" r="5"/>
+                <circle class="s0" cx="80" cy="380" r="5"/><circle class="s1" cx="300" cy="120" r="5"/>
+              </g>
+              <g class="m-ring"><circle cx="230" cy="254" r="13" fill="none"/><circle cx="352" cy="360" r="15" fill="none"/></g>
+              <g class="m-ui"><rect x="14" y="14" width="150" height="32" rx="16"/><circle cx="32" cy="30" r="5" fill="none"/><text x="46" y="35" class="m-txt">Eskişehir</text></g>
+            </svg>
+          </div>
+          <h3>Asfalya</h3>
+          <p class="tile__tag" data-i18n="as.tag">Road-damage detection from bus-mounted cameras.</p>
+          <p class="tile__meta mono"><i class="dot dot--accent" aria-hidden="true"></i><span data-i18n="s.dev">In development</span><span class="sep">·</span><span data-i18n="priv">Private repository</span></p>
+          <details class="more">
+            <summary data-i18n="more">Details</summary>
+            <p data-i18n="as.p1">Phone cameras on municipal buses record the road. Footage is processed overnight on a single GPU: a YOLO model finds potholes, cracks, patches and raised manhole covers, GPS and OSM map-matching pin each one to a street, and sightings across passes collapse into one tracked repair. Results land on a live damage map with weekly PDF reports.</p>
+            <p data-i18n="as.p2">Privacy is enforced in code. Face and plate blurring is a mandatory pipeline step, an unmasked frame is rejected with a PrivacyViolation, and raw video never reaches the server.</p>
+            <p class="mono small" data-i18n="as.facts">Target: Eskişehir pilot, then five buses over twelve weeks. Model v3, mAP50 0.660; multi-pass capture 87.1% against an 85% field target. Phase 5 of 7.</p>
+            <p class="mono small">Python · YOLO · Node/Express · PostGIS · MapLibre GL · Docker</p>
+          </details>
+        </article>
+
+        <!-- EKT -->
+        <article class="tile">
+          <div class="tile__img"><img src="assets/ekt.png" alt="EKT Akademi website, shown in greyscale" loading="lazy"></div>
+          <h3>EKT Akademi</h3>
+          <p class="tile__tag" data-i18n="ekt.tag">Education platform in production.</p>
+          <p class="tile__meta mono"><i class="dot dot--ok" aria-hidden="true"></i><span data-i18n="s.live">Live</span><span class="sep">·</span><a class="uline" href="https://ektakademi.com" target="_blank" rel="noopener">ektakademi.com ↗</a></p>
+          <details class="more">
+            <summary data-i18n="more">Details</summary>
+            <p data-i18n="ekt.p">Public website, student panel and admin panel. A Node 22 and Express API on PostgreSQL with Prisma, server-side sessions, file uploads, PDF certificates with QR verification, email and SMS reminders, spam-protected forms and live-class links. Built phase by phase from a static front end, live since 20 August 2026.</p>
+            <p class="mono small">Node 22 · Express · Prisma · PostgreSQL · nginx · pm2</p>
+          </details>
+        </article>
+      </div>
+
+      <h3 class="sub-h" data-i18n="work.more">More work</h3>
+      <ul class="rows">
+        <li class="row">
+          <div class="row__thumb"><img src="assets/cakmakpen.png" alt="Çakmak Pen website, shown in greyscale" loading="lazy"></div>
+          <div class="row__main">
+            <h4>Çakmak Pen</h4>
+            <p data-i18n="cp.p">Corporate site for a glass-balcony and joinery company, built from scratch as a static multi-page site with no build step: 23 pages, design tokens from the brand guide, measured WCAG contrast, JSON-LD, sitemap and llms.txt.</p>
+          </div>
+          <p class="row__meta mono"><i class="dot dot--ok" aria-hidden="true"></i><span data-i18n="s.live">Live</span><br><a class="uline" href="https://cakmakpen.com.tr" target="_blank" rel="noopener">cakmakpen.com.tr ↗</a></p>
+        </li>
+        <li class="row">
+          <div class="row__thumb row__thumb--tx mono" aria-hidden="true">BD</div>
+          <div class="row__main">
+            <h4>Bal Defteri</h4>
+            <p data-i18n="bd.p">Honey e-commerce site on TanStack Start and Cloudflare with D1 and KV, Turnstile bot protection for orders, a local emulation workflow that never touches production data, and a written roadmap.</p>
+          </div>
+          <p class="row__meta mono"><i class="dot dot--accent" aria-hidden="true"></i><span data-i18n="s.dev">In development</span><br><span data-i18n="priv">Private repository</span></p>
+        </li>
+        <li class="row">
+          <div class="row__thumb row__thumb--tx mono" aria-hidden="true">KU</div>
+          <div class="row__main">
+            <h4>Kurenai</h4>
+            <p data-i18n="ku.p">Anime subtitle translation service. Produces .ass subtitles without touching the video: audio timing, OCR of on-screen text and culturally aware Turkish translation across eight languages, with a swappable service layer, a subtitle cache for P2P players and a pilot runbook.</p>
+          </div>
+          <p class="row__meta mono"><i class="dot dot--mute" aria-hidden="true"></i><span data-i18n="s.proto">Prototype</span><br><span data-i18n="priv">Private repository</span></p>
+        </li>
+        <li class="row">
+          <div class="row__thumb row__thumb--tx mono" aria-hidden="true">RC</div>
+          <div class="row__main">
+            <h4>RepChat</h4>
+            <p data-i18n="rc.p">Live support, "a conversation, not a cockpit": an Express and Socket.IO gateway, a 5 KB widget loader with an iframe UI, an operator inbox with a visitor card and a nine-step end-to-end test.</p>
+          </div>
+          <p class="row__meta mono"><i class="dot dot--mute" aria-hidden="true"></i><span data-i18n="s.proto">Prototype</span><br><span data-i18n="priv">Private repository</span></p>
+        </li>
+        <li class="row">
+          <div class="row__thumb row__thumb--tx mono" aria-hidden="true">WF</div>
+          <div class="row__main">
+            <h4>Warden of the Fields</h4>
+            <p data-i18n="wf.p">First-person open-world survival game in Unreal Engine 5 and C++: survival needs, village management by day and night defence, built as data-driven systems with automation tests and CI from the first milestone. At M0 of M12.</p>
+          </div>
+          <p class="row__meta mono"><i class="dot dot--accent" aria-hidden="true"></i><span data-i18n="s.dev">In development</span><br><span data-i18n="priv">Private repository</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- QUOTE BAND -->
+    <section class="band" aria-label="Principle">
+      <img class="band__img" src="assets/animerank-gateway.jpg" alt="" loading="lazy">
+      <div class="band__shade"></div>
+      <div class="wrap band__in">
+        <p class="band__q" data-i18n="q.h">Unknown is never <em>clean.</em></p>
+        <p class="band__s" data-i18n="q.s">A gate that opens when it cannot see is not a gate.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="sec wrap sec--motif" id="skills" aria-labelledby="skills-h">
+      <svg class="motif motif--dots" viewBox="0 0 88 70" aria-hidden="true">
+        <g><circle cx="8" cy="8" r="5"/><circle cx="32" cy="8" r="5"/><circle cx="56" cy="8" r="5"/><circle cx="80" cy="8" r="5"/>
+        <circle cx="8" cy="35" r="5"/><circle cx="32" cy="35" r="5"/><circle cx="56" cy="35" r="5"/><circle cx="80" cy="35" r="5"/>
+        <circle cx="8" cy="62" r="5"/><circle cx="32" cy="62" r="5"/><circle cx="56" cy="62" r="5"/><circle cx="80" cy="62" r="5"/></g>
+      </svg>
+      <h2 class="sec__title sec__title--bold" id="skills-h" data-i18n="sk.h">Skills</h2>
+
+      <div class="pills">
+        <div class="pills__row">
+          <p class="sk sk1"><span class="sk__n">1</span><span data-i18n="sk1">Backend development</span></p>
+          <p class="sk sk2"><span class="sk__n">2</span><span data-i18n="sk2">AI &amp; vision</span></p>
+          <p class="sk sk3"><span class="sk__n">3</span><span data-i18n="sk3">Distributed systems</span></p>
+        </div>
+        <div class="pills__row pills__row--b">
+          <p class="sk sk1"><span class="sk__n">4</span><span data-i18n="sk4">Data &amp; caching</span></p>
+          <p class="sk sk2"><span class="sk__n">5</span><span data-i18n="sk5">Delivery</span></p>
+          <p class="sk sk3"><span class="sk__n">6</span><span data-i18n="sk6">Integrations</span></p>
+        </div>
+      </div>
+
+      <dl class="stack">
+        <div><dt data-i18n="sk.lang">Languages</dt><dd>JavaScript, TypeScript, Python, C++, SQL</dd></div>
+        <div><dt data-i18n="sk.back">Back end</dt><dd>Node.js, Express, FastAPI, REST, GraphQL, Socket.IO, microservices</dd></div>
+        <div><dt data-i18n="sk.data">Data</dt><dd>PostgreSQL / PostGIS, MongoDB, Redis, SQLite, Prisma, Apache Kafka, large-scale data processing</dd></div>
+        <div><dt data-i18n="sk.ai">AI &amp; vision</dt><dd>YOLO fine-tuning, GPS map-matching, AI-assisted media pipelines, Model Context Protocol, LLM tool integration, OCR</dd></div>
+        <div><dt data-i18n="sk.dist">Distributed</dt><dd>P2P and hybrid content distribution, HLS, ffmpeg</dd></div>
+        <div><dt data-i18n="sk.ops">Delivery</dt><dd>Docker, Linux, nginx, pm2, Git, CI/CD, GitHub Actions, Cloudflare Pages / D1, Jest, pytest</dd></div>
+        <div><dt data-i18n="sk.front">Front end</dt><dd>HTML &amp; CSS design systems, TanStack Start, Astro, MapLibre GL</dd></div>
+        <div><dt data-i18n="sk.int">Integrations</dt><dd>Google Ads API, Meta Marketing API, CAMARA / Nokia Network-as-Code, SMTP and SMS gateways</dd></div>
+      </dl>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="sec wrap" id="what" aria-labelledby="what-h">
+      <h2 class="sec__title" id="what-h" data-i18n="wd.h">What I do</h2>
+      <div class="cols3">
+        <article><h3 data-i18n="wd1.h">Backend &amp; APIs</h3><p data-i18n="wd1.p">Node.js and Python services, REST and GraphQL APIs, PostgreSQL, MongoDB and Redis, tuned until the queries are fast.</p></article>
+        <article><h3 data-i18n="wd2.h">AI &amp; computer vision</h3><p data-i18n="wd2.p">YOLO pipelines, GPS map-matching, MCP servers and LLM tooling, with privacy rules enforced in code.</p></article>
+        <article><h3 data-i18n="wd3.h">Distributed media systems</h3><p data-i18n="wd3.p">P2P and hybrid delivery, HLS pipelines, content verification and microservices that scale.</p></article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="sec wrap sec--motif" id="experience" aria-labelledby="exp-h">
+      <svg class="motif motif--tri" viewBox="0 0 88 88" aria-hidden="true">
+        <path d="M0 0h40L0 40z"/><path d="M48 0h40v40z"/><path d="M88 48v40H48z"/><path d="M40 88H0V48z" opacity="0"/>
+      </svg>
+      <h2 class="sec__title sec__title--bold" id="exp-h" data-i18n="ex.h">Experience</h2>
+
+      <ol class="loop">
+        <li class="loop__row loop__row--r">
+          <div class="loop__t">
+            <h3><span data-i18n="ex1.when">2025 — present</span> · <span data-i18n="ex1.h">Co-founder and technical lead</span></h3>
+            <p data-i18n="ex1.d">SYBERY · AnimeRank. Architecture, backend, data and delivery of an AI-assisted media platform.</p>
+          </div>
+          <span class="loop__n">1</span>
+        </li>
+        <li class="loop__row loop__row--l">
+          <span class="loop__n">2</span>
+          <div class="loop__t">
+            <h3><span data-i18n="ex2.when">2024 — present</span> · <span data-i18n="ex2.h">Freelance backend developer</span></h3>
+            <p data-i18n="ex2.d">Node.js, Python and PostgreSQL backends. Redis caching cut query time by 60%.</p>
+          </div>
+        </li>
+        <li class="loop__row loop__row--r">
+          <div class="loop__t">
+            <h3><span data-i18n="ed.when">2025 — present</span> · Anadolu University</h3>
+            <p data-i18n="ed.deg">Associate degree, Back-End Software Development.</p>
+          </div>
+          <span class="loop__n">3</span>
+        </li>
+      </ol>
+
+      <details class="more more--wide">
+        <summary data-i18n="ex.more">Full responsibilities</summary>
+        <div class="cols2">
+          <div>
+            <h4 data-i18n="ex1.h">Co-founder and technical lead</h4>
+            <ul class="bullets">
+              <li data-i18n="ex1.b1">Architecture, delivery management and technical leadership of an AI-assisted media-technology platform.</li>
+              <li data-i18n="ex1.b2">Built a high-performance Node.js backend and RESTful API.</li>
+              <li data-i18n="ex1.b3">Migrated the data layer from SQLite to PostgreSQL and tuned query performance.</li>
+              <li data-i18n="ex1.b4">Built large-scale data collection and indexing, plus content-verification and media-matching engines.</li>
+              <li data-i18n="ex1.b5">Developed a scalable, microservice-based service infrastructure.</li>
+              <li data-i18n="ex1.b6">Researching P2P hybrid content distribution and AI-assisted media-processing pipelines.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="ex2.h">Freelance backend developer</h4>
+            <ul class="bullets">
+              <li data-i18n="ex2.b1">Built Node.js, Python and PostgreSQL backends for a range of web projects.</li>
+              <li data-i18n="ex2.b2">Designed and integrated REST and GraphQL APIs.</li>
+              <li data-i18n="ex2.b3">Cut query time by 60% with Redis-based caching.</li>
+              <li data-i18n="ex2.b4">Automated deployments with Docker and CI/CD pipelines.</li>
+            </ul>
+            <h4 class="gap-t" data-i18n="ed.h">Education</h4>
+            <p class="small-p" data-i18n="ed.p">Backend development, database systems, API design, microservice architectures and modern software practice, studied alongside building and shipping the projects above.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- OPEN SOURCE -->
+    <section class="sec wrap" id="open" aria-labelledby="open-h">
+      <h2 class="sec__title" id="open-h" data-i18n="op.h">Open source</h2>
+      <p class="sec__sub" data-i18n="op.sub">Public, so you can read the code.</p>
+
+      <article class="case">
+        <header class="case__head">
+          <h3>Aegis</h3>
+          <a class="uline" href="https://github.com/Xaena53/aegis" target="_blank" rel="noopener"><span data-i18n="op.src">Source</span> ↗</a>
+        </header>
+        <p class="case__tag" data-i18n="ag.tag">Network-verified trust for AI agents that spend money.</p>
+        <div class="split split--case">
+          <div>
+            <p data-i18n="ag.p1">An MCP server that runs real Google Ads and Meta campaigns behind server-side spending guards. Before a human is ever prompted, it asks the mobile network (GSMA Open Gateway and CAMARA, through Nokia Network-as-Code) whether the approver's line has been taken over.</p>
+            <p data-i18n="ag.p2">The agent's own confirm flag is ignored on every path. Approval stops being a story the agent tells and becomes a fact the server can verify.</p>
+          </div>
+          <dl class="kv">
+            <div><dt data-i18n="ag.k1">Tests</dt><dd>1,765 · 83.19% <span data-i18n="ag.v1">line coverage</span></dd></div>
+            <div><dt data-i18n="ag.k2">Stack</dt><dd>TypeScript · Node ≥ 22.13 · Docker</dd></div>
+            <div><dt data-i18n="ag.k3">Licence</dt><dd>AGPL-3.0</dd></div>
+          </dl>
+        </div>
+
+        <div class="chain">
+          <p class="chain__cap mono" data-i18n="ag.chain">The trust chain, and where it honestly stands</p>
+          <table>
+            <thead><tr>
+              <th scope="col">#</th>
+              <th scope="col" data-i18n="ag.th1">Signal</th>
+              <th scope="col" data-i18n="ag.th2">Question it answers</th>
+              <th scope="col" data-i18n="ag.th3">State</th>
+            </tr></thead>
+            <tbody>
+              <tr><td>1</td><td><code>simSwap.check</code></td><td data-i18n="c1">Was the approver's line taken over recently?</td><td><span class="state state--live" data-i18n="s.live">Live</span></td></tr>
+              <tr><td>2</td><td><code>numberVerification</code></td><td data-i18n="c2">Is the approval coming from the owner's own device?</td><td><span class="state state--sim" data-i18n="s.sim">Simulation only</span></td></tr>
+              <tr><td>3</td><td><code>deviceStatus.reachability</code></td><td data-i18n="c3">Can the line receive data or SMS right now?</td><td><span class="state state--live" data-i18n="s.live">Live</span></td></tr>
+              <tr><td>4</td><td><code>deviceStatus.roaming</code></td><td data-i18n="c4">Is the line in the expected country?</td><td><span class="state state--live" data-i18n="s.live">Live</span></td></tr>
+              <tr><td>5</td><td><code>deviceSwap.check</code></td><td data-i18n="c5">Was the line moved to a new device?</td><td><span class="state state--live" data-i18n="s.live">Live</span></td></tr>
+              <tr><td>6</td><td><code>callForwarding</code></td><td data-i18n="c6">Is unconditional call forwarding active?</td><td><span class="state state--live" data-i18n="s.live">Live</span></td></tr>
+            </tbody>
+          </table>
+          <p class="chain__note" data-i18n="ag.note">Five of six links are verified against live endpoints. The account runs in Nokia's Simulator mode: the wire is proven, the operator integration is not. Number Verification is a device-side OIDC flow that no back end can call.</p>
+        </div>
+      </article>
+
+      <article class="case case--small">
+        <header class="case__head">
+          <h3>AdsPilot</h3>
+          <a class="uline" href="https://xaena53.github.io" target="_blank" rel="noopener"><span data-i18n="op.site">Project site</span> ↗</a>
+        </header>
+        <p data-i18n="ap.p">Open-source MCP server for safety-gated Google Ads management. An AI agent can manage campaigns without spending your money unsupervised.</p>
+      </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sec wrap" id="contact" aria-labelledby="ct-h">
+      <h2 class="sec__title" id="ct-h" data-i18n="ct.h">Get in touch</h2>
+      <div class="contact">
+        <div class="contact__list">
+          <p class="contact__lead" data-i18n="ct.p">I want to build scalable products in AI, big data and media technology that can compete internationally. If that overlaps with what you are working on, write to me.</p>
+          <dl>
+            <div><dt>GitHub</dt><dd><a class="uline" href="https://github.com/Xaena53" target="_blank" rel="noopener">github.com/Xaena53</a></dd></div>
+            <div><dt data-i18n="ct.mail">Email</dt><dd><a class="uline" href="mailto:bedometom@gmail.com">bedometom@gmail.com</a></dd></div>
+            <div><dt data-i18n="ct.loc">Location</dt><dd data-i18n="rec.loc.v">Eskişehir, Türkiye</dd></div>
+            <div><dt data-i18n="ct.lang">Languages</dt><dd data-i18n="rec.lang.v">Turkish, English</dd></div>
+            <div><dt data-i18n="ct.cv">Curriculum vitae</dt><dd><a class="uline" href="Bedirhan-Cetin-CV.pdf" download data-i18n="ct.cvd">Download PDF</a></dd></div>
+          </dl>
+        </div>
+        <div class="seal" aria-hidden="true">
+          <img class="seal__photo" src="assets/portrait.jpg" alt="" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+          <span class="seal__mono">BÇ</span>
+          <span class="seal__cap mono">SYBERY · AnimeRank</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span class="mono">© <span id="year">2026</span> Bedirhan Çetin</span>
+    <a class="mono" href="#top" data-i18n="foot.top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
