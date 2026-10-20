@@ -1,24 +1,18 @@
 /* ============================================================
    Identity layer — "verified record" signature for Bedirhan Çetin
-   Soft diagonal-line background with warm glows (AnimeRank family),
+   Soft diagonal-line background (AnimeRank family),
    BÇ monogram, Xaena53 stamp, numbered sections, asymmetric work,
    commit-log contributions.
    ------------------------------------------------------------ */
-:root { --accent2: #D6336C; --glow1: rgba(232,120,30,.20); --glow2: rgba(214,51,108,.13); --line: rgba(0,0,0,.045); }
-:root[data-theme="dark"] { --glow1: rgba(232,120,30,.22); --glow2: rgba(214,51,108,.18); --line: rgba(255,255,255,.035); }
+:root { --accent2: var(--accent); --line: rgba(0,0,0,.045); }
+:root[data-theme="dark"] { --line: rgba(255,255,255,.035); }
 
 body { position: relative; isolation: isolate; }
-body::before, body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; }
 body::before {
   background: repeating-linear-gradient(135deg, transparent 0 26px, var(--line) 26px 27px);
   -webkit-mask-image: radial-gradient(120% 90% at 20% 0%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%);
           mask-image: radial-gradient(120% 90% at 20% 0%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%);
-}
-body::after {
-  background:
-    radial-gradient(42vw 42vw at 8% -6%, var(--glow1), transparent 70%),
-    radial-gradient(38vw 38vw at 104% 38%, var(--glow2), transparent 72%),
-    radial-gradient(30vw 30vw at 30% 112%, var(--glow1), transparent 70%);
 }
 
 /* Top strip: part of the page, scrolls away with it */
@@ -30,10 +24,10 @@ body::after {
 .hero::before {
   content: "BÇ"; position: absolute; right: -2%; top: 18px; z-index: -1;
   font-size: clamp(9rem, 26vw, 22rem); font-weight: 700; letter-spacing: -.08em; line-height: .8;
-  color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--accent) 45%, transparent);
+  color: transparent; -webkit-text-stroke: 1px var(--hair);
   transform: rotate(-6deg); user-select: none;
 }
-.hero__name { background: linear-gradient(100deg, var(--ink) 55%, var(--accent) 82%, var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+
 .hero__sub::before { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
 .idcard { position: relative; overflow: visible; }
 .idcard__photo { border-radius: 18px 18px 0 0; }
@@ -79,11 +73,7 @@ main { counter-reset: sec; }
 .log__main p:last-child { margin: 0; color: var(--ink2); line-height: 1.6; }
 .log__link { margin-top: 3px; font-size: .82rem; white-space: nowrap; }
 
-/* Quote band and skills accents */
-.band { margin-top: 24px; }
-.band__shade { background: linear-gradient(90deg, rgba(11,11,13,.92) 0%, rgba(11,11,13,.7) 55%, rgba(60,14,30,.55) 100%); }
-.sk1 { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
-.loop__n { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+/* Accents */
 .case { background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(6px); }
 
 @media (max-width: 900px) {
@@ -97,11 +87,3 @@ main { counter-reset: sec; }
   .sec__title::after { display: none; }
 }
 
-/* Quote band: identity pattern in place of a photo */
-.band__img { display: none; }
-.band { background:
-  radial-gradient(60% 120% at 0% 0%, rgba(232,120,30,.45), transparent 60%),
-  radial-gradient(50% 120% at 100% 100%, rgba(214,51,108,.40), transparent 65%),
-  repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.05) 22px 23px),
-  #0B0B0D; }
-.band__shade { display: none; }

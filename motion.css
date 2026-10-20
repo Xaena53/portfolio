@@ -6,10 +6,10 @@
   transition: transform .35s var(--ease), box-shadow .35s var(--ease), background-color .25s, color .25s, border-color .25s;
 }
 .hero__links a { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; background: none; overflow: hidden; isolation: isolate; border: 1px solid var(--hair); }
-.hero__links a:first-child { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 8px 24px -10px var(--accent); }
+.hero__links a:first-child { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--accent), var(--accent2));  }
 .hero__links a::after { content: "→"; transition: transform .35s var(--ease); }
-.hero__links a::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%); transform: translateX(-120%); transition: transform .7s var(--ease); }
-.hero__links a:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -12px var(--accent); color: inherit; }
+.hero__links a::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(255,255,255,.12); transform: translateX(-120%); transition: transform .7s var(--ease); }
+.hero__links a:hover { transform: translateY(-3px); color: inherit; }
 .hero__links a:first-child:hover { color: #fff; }
 .hero__links a:hover::before { transform: translateX(120%); }
 .hero__links a:hover::after { transform: translateX(4px); }
@@ -24,7 +24,7 @@
 .log__link:hover, .case__head a:hover { transform: translateX(4px); }
 .more summary:hover { color: var(--accent); }
 .tile__img { transition: box-shadow .5s var(--ease), transform .5s var(--ease); }
-.tile:hover .tile__img { transform: translateY(-6px); box-shadow: 0 30px 60px -28px color-mix(in srgb, var(--accent) 60%, transparent); }
+.tile:hover .tile__img { transform: translateY(-6px); box-shadow: var(--shadow); }
 .row { transition: background-color .3s, padding .4s var(--ease); border-radius: 12px; }
 .row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); padding-left: 12px; padding-right: 12px; }
 .row__thumb { transition: transform .4s var(--ease); }
@@ -66,7 +66,6 @@
 
 /* Parallax targets */
 .hero::before { translate: 0 var(--py, 0); }
-.band__q { translate: 0 var(--by, 0); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
