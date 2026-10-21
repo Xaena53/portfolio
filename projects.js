@@ -27,7 +27,7 @@
         [P + 'asfalya-3.jpg', { en: 'Damage map of Eskişehir with neighbourhood score card.', tr: 'Mahalle skor kartıyla Eskişehir hasar haritası.' }],
         [P + 'asfalya-4.jpg', { en: 'Density view of open damage records.', tr: 'Açık hasar kayıtlarının yoğunluk görünümü.' }],
         [P + 'asfalya-5.jpg', { en: 'Precision–recall curve per class, all classes mAP@0.5 = 0.632.', tr: 'Sınıf bazında hassasiyet–duyarlılık eğrisi; tüm sınıflar mAP@0.5 = 0,632.' }],
-        [P + 'asfalya-6.jpg', { en: 'Neighbourhood score card: open damages and average severity.', tr: 'Mahalle skor kartı: açık hasar sayısı ve ortalama şiddet.' }]
+        [P + 'asfalya-6.jpg', { en: 'Training data: labelled instances per class. Longitudinal cracks lead with 22,194; the patch and edge-break classes have no labels yet, so the model detects five classes.', tr: 'Eğitim verisi: sınıf başına etiketli örnek sayısı. 22.194 ile en çok boyuna çatlak var; yama ve kenar kırığı sınıflarında henüz etiket yok, bu yüzden model beş sınıf tespit eder.' }]
       ],
       teknik: [
         [{ en: 'Model', tr: 'Model' }, 'YOLO (Ultralytics), OpenCV, PyTorch'],
@@ -43,9 +43,9 @@
       ad: 'Warden of the Fields',
       ust: { en: 'Game development · Unreal Engine 5', tr: 'Oyun geliştirme · Unreal Engine 5' },
       metin: {
-        en: ['A first-person open-world survival game: run the village by day and defend it at night. Survival needs, villager jobs and buildings are built as data-driven systems, so balancing happens in data assets instead of code.',
+        en: ['A first-person open-world survival game: run the village by day and defend it at night. Survival needs, villager jobs and buildings are built as data-driven systems, so balancing lives in data assets.',
              'Development runs on milestones M0 to M12 with automation tests and CI from the first milestone. The world is assembled from licensed Fab asset packs, tracked in an inventory so every licence and credit stays accounted for.'],
-        tr: ['Birinci şahıs açık dünya hayatta kalma oyunu: gündüz köyü yönet, gece savun. Hayatta kalma ihtiyaçları, köylü işleri ve binalar veri odaklı sistemler olarak kuruldu; denge ayarları kodda değil veri dosyalarında yapılır.',
+        tr: ['Birinci şahıs açık dünya hayatta kalma oyunu: gündüz köyü yönet, gece savun. Hayatta kalma ihtiyaçları, köylü işleri ve binalar veri odaklı sistemler olarak kuruldu; denge ayarları veri dosyalarında yapılır.',
              'Geliştirme M0’dan M12’ye kilometre taşlarıyla ilerliyor; ilk kilometre taşından itibaren otomasyon testleri ve CI var. Dünya lisanslı Fab paketleriyle kuruluyor; her lisans ve kredi bir envanterde takip ediliyor.']
       },
       one: {
@@ -99,20 +99,22 @@
       ust: { en: 'Video platform · Early access', tr: 'Video platformu · Erken erişim' },
       metin: {
         en: ['A video platform for anime: searchable catalogue, season calendar, cross-device watch progress, multi-language subtitles and a community layer.',
-             'My part is the backend, the media pipeline and the servers: transcoding to browser-friendly H.264, subtitle synchronisation measured against the audio, and delivery that mixes peer-to-peer and media servers.'],
+             'I designed and built AnimeRank end to end, from the interface to the servers. Episodes are transcoded to browser-friendly H.264, subtitle timing is measured against speech in the audio, and delivery combines peer-to-peer with dedicated media servers.'],
         tr: ['Anime için bir video platformu: aranabilir katalog, sezon takvimi, cihazlar arası izleme takibi, çok dilli altyazı ve topluluk özellikleri.',
-             'Benim kısmım backend, medya işleme hattı ve sunucular: tarayıcı dostu H.264’e dönüştürme, sesle ölçülen altyazı senkronizasyonu ve P2P ile medya sunucularını birlikte kullanan dağıtım.']
+             'AnimeRank’i arayüzden sunuculara kadar uçtan uca tasarlayıp geliştirdim. Bölümler tarayıcı dostu H.264’e dönüştürülür, altyazı zamanlaması sesteki konuşmaya göre ölçülür, dağıtım ise P2P ile medya sunucularını birlikte kullanır.']
       },
       one: {
         en: ['Subtitle sync checker that measures offsets against speech in the audio', 'Zero-downtime deployments and a watchdog that throttles background jobs when playback slows', '49 Jest suites on the backend'],
         tr: ['Altyazı kaymasını sesteki konuşmaya göre ölçen senkron denetleyicisi', 'Kesintisiz dağıtım ve oynatma yavaşlayınca arka plan işlerini kısan bir bekçi', 'Backend’de 49 Jest test grubu']
       },
       gorsel: [
-        [P + 'animerank-1.jpg', { en: 'Home page.', tr: 'Ana sayfa.' }],
-        [P + 'animerank-2.jpg', { en: 'Series detail page.', tr: 'Dizi detay sayfası.' }],
-        [P + 'animerank-3.jpg', { en: 'Discover page.', tr: 'Keşfet sayfası.' }]
+        [P + 'animerank-2.jpg', { en: 'Anime library: 2,465 titles merged from Jikan, AniList and Kitsu, with search, sort, format, genre and year filters.', tr: 'Anime Kütüphanesi: Jikan, AniList ve Kitsu’dan birleştirilen 2.465 yapım; arama, sıralama, format, tür ve yıl filtreleri.' }],
+        [P + 'animerank-3.jpg', { en: 'Series page episode list: thumbnail grid with episode titles and air dates.', tr: 'Dizi sayfasındaki bölüm listesi: küçük görseller, bölüm adları ve yayın tarihleriyle ızgara.' }],
+        [P + 'animerank-4.jpg', { en: 'Membership page: 5-day free trial, monthly / 3-month / yearly toggle and Starter, Ultra and lifetime Legendary plans.', tr: 'Üyelik sayfası: 5 gün ücretsiz deneme, aylık / 3 aylık / yıllık seçimi ve Başlangıç, Ultra ile ömür boyu Legendary paketleri.' }],
+        [P + 'animerank-1.jpg', { en: 'Home page: full-bleed hero for Frieren with rating, year, episode count and Watch / Details actions.', tr: 'Ana sayfa: puan, yıl, bölüm sayısı ve İzle / Detay düğmeleriyle tam genişlikte Frieren vitrini.' }]
       ],
       teknik: [
+        [{ en: 'Front end', tr: 'Ön yüz' }, 'Design system, responsive player UI'],
         [{ en: 'Backend', tr: 'Backend' }, 'Node.js, Express, MongoDB'],
         [{ en: 'Media', tr: 'Medya' }, 'ffmpeg, H.264 / HEVC, WebRTC P2P, nginx'],
         [{ en: 'Subtitles', tr: 'Altyazı' }, 'VTT / ASS, VAD-based sync measurement'],
@@ -135,9 +137,9 @@
         tr: ['Konuşma, OCR ve çeviri sağlayıcıları için değiştirilebilir servis katmanı', 'Ters vekil arkasında, istemci bazlı hız sınırlı güçlendirilmiş API', 'Pilot işletim rehberi ve canlıya hazırlık kontrol listesi']
       },
       gorsel: [
-        [P + 'kurenai-1.jpg', { en: 'Landing page.', tr: 'Tanıtım sayfası.' }],
-        [P + 'kurenai-2.jpg', { en: 'Product section.', tr: 'Ürün bölümü.' }],
-        [P + 'kurenai-3.jpg', { en: 'How the engine resolves a frame, step by step.', tr: 'Motorun bir kareyi adım adım nasıl çözdüğü.' }]
+        [P + 'kurenai-1.jpg', { en: 'Landing hero: “the subtitle translation bot that sees anime”, with a typeset frame preview and a quality-score card (87).', tr: 'Giriş bölümü: “Anime’yi gören altyazı çeviri botu”, dizilmiş kare önizlemesi ve kalite skoru kartı (87).' }],
+        [P + 'kurenai-3.jpg', { en: 'Developer API section: Python SDK snippet that sends a frame and gets back an .ass file with a COMET quality score.', tr: 'Geliştirici API bölümü: bir kare gönderip COMET kalite skoruyla .ass dosyası alan Python SDK örneği.' }],
+        [P + 'kurenai-2.jpg', { en: 'Before / after slider: the original Japanese station sign next to the engine’s Turkish sign replacement in perspective.', tr: 'Önce / sonra kaydırıcısı: orijinal Japonca istasyon tabelası ve motorun perspektife oturttuğu Türkçe tabela.' }]
       ],
       teknik: [
         [{ en: 'Backend', tr: 'Backend' }, 'Python, FastAPI, SQLAlchemy, Alembic'],
@@ -189,7 +191,11 @@
         tr: ['Panel anahtarlarından ayrı, alan adına kilitli herkese açık widget anahtarları', 'Spam ve engelleme kontrolleri, beyaz listeli dosya ekleri', 'Tüm akışı kapsayan uçtan uca test paketi']
       },
       gorsel: [
-        [P + 'repchat-1.jpg', { en: 'Operator panel sign-in.', tr: 'Operatör paneli girişi.' }]
+        [P + 'repchat-1.jpg', { en: 'Support widget open on a desktop site: user message, auto-created ticket card and an operator reply.', tr: 'Masaüstü sitede açık destek penceresi: kullanıcı mesajı, otomatik açılan talep kartı ve yetkili yanıtı.' }],
+        [[P + 'repchat-2.jpg', P + 'repchat-3.jpg'], { en: 'Mobile widget, steps 1 and 3: topic picker (account, membership and payment, codes, content request, partnership, feedback), then a 6-digit email code in the dark theme before the ticket is created.', tr: 'Mobil pencere, 1. ve 3. adım: konu seçimi (hesap, üyelik ve ödeme, kodlar, içerik talebi, iş birliği, öneri), ardından koyu temada talep açılmadan önce 6 haneli e-posta kodu.' }],
+        [P + 'repchat-4.jpg', { en: 'Operator panel inbox (dark): ticket list with Legendary priority tags, live conversation and user details with per-user file permissions.', tr: 'Yetkili paneli gelen kutusu (koyu): Legendary öncelik etiketli talep listesi, canlı sohbet ve kullanıcıya özel dosya izinleriyle kullanıcı bilgileri.' }],
+        [P + 'repchat-5.jpg', { en: 'Operator panel (light): restrict-support dialog with reason, scope, duration presets and a note to the user.', tr: 'Yetkili paneli (açık): gerekçe, kapsam, süre seçenekleri ve kullanıcıya not içeren destek kısıtlama penceresi.' }],
+        [P + 'repchat-6.jpg', { en: 'Widget priority support: a Legendary member’s ticket goes to the front of the queue with an estimated 5-minute reply.', tr: 'Pencerede öncelikli destek: Legendary üyenin talebi sıranın önüne alınır, tahmini yanıt süresi 5 dakika.' }]
       ],
       teknik: [
         [{ en: 'Realtime', tr: 'Gerçek zamanlı' }, 'Node.js, Express, Socket.IO, Redis adapter'],
@@ -225,8 +231,8 @@
   };
 
   var UI = {
-    en: { one: 'Highlights', teknik: 'Technical stack', ziyaret: 'Visit site', ozel: 'Private repository', kapat: 'Close' },
-    tr: { one: 'Öne çıkanlar', teknik: 'Teknik altyapı', ziyaret: 'Siteyi ziyaret et', ozel: 'Özel depo', kapat: 'Kapat' }
+    en: { one: 'Highlights', teknik: 'Technical stack', ziyaret: 'Visit site', ozel: 'Private repository', kapat: 'Close', onceki: 'Previous image', sonraki: 'Next image' },
+    tr: { one: 'Öne çıkanlar', teknik: 'Teknik altyapı', ziyaret: 'Siteyi ziyaret et', ozel: 'Özel depo', kapat: 'Kapat', onceki: 'Önceki görsel', sonraki: 'Sonraki görsel' }
   };
 
   /* ---------------- detail dialog ---------------- */
@@ -236,16 +242,22 @@
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
-  function gorselGoster(i) {
+  var srcs = function (g) { return [].concat(g[0]); };
+  var portreler = { 'repchat-2.jpg': 1, 'repchat-3.jpg': 1, 'repchat-6.jpg': 1, 'asfalya-6.jpg': 1 };
+  var dikMi = function (src) { return !!portreler[src.split('/').pop()]; };
+
+  function gorselGoster(i, ilk) {
     var g = PROJE[acik].gorsel; if (!g.length) return;
     sira = (i + g.length) % g.length;
-    var img = $('pd-img');
-    img.classList.add('is-swap');
-    setTimeout(function () {
-      img.src = g[sira][0]; img.alt = g[sira][1][dil()];
-      $('pd-cap').textContent = (sira + 1) + ' / ' + g.length + ' — ' + g[sira][1][dil()];
-      img.onload = function () { img.classList.remove('is-swap'); };
-    }, 160);
+    var kutu = $('pd-imgs'), sahne = $('pd-stage'), cur = g[sira], liste = srcs(cur);
+    var yaz = function () {
+      sahne.classList.toggle('pd__stage--tall', dikMi(liste[0]));
+      sahne.classList.toggle('pd__stage--pair', liste.length > 1);
+      kutu.innerHTML = liste.map(function (src, k) { return '<img src="' + src + '" alt="' + esc(k ? '' : cur[1][dil()]) + '" decoding="async">'; }).join('');
+      $('pd-cap').innerHTML = '<b>' + (sira + 1) + ' / ' + g.length + '</b>' + esc(cur[1][dil()]);
+      kutu.classList.remove('is-swap');
+    };
+    if (ilk) yaz(); else { kutu.classList.add('is-swap'); setTimeout(yaz, 160); }
     $('pd-thumbs').querySelectorAll('button').forEach(function (b, k) { b.setAttribute('aria-current', String(k === sira)); });
   }
 
@@ -254,6 +266,8 @@
     $('pd-kicker').textContent = p.ust[l];
     $('pd-title').textContent = p.ad;
     dlg.querySelector('.pd__close').setAttribute('aria-label', u.kapat);
+    dlg.querySelector('.pd__nav--p').setAttribute('aria-label', u.onceki);
+    dlg.querySelector('.pd__nav--n').setAttribute('aria-label', u.sonraki);
     $('pd-text').innerHTML = p.metin[l].map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') +
       '<h3 class="mono">' + u.one + '</h3><ul class="bullets">' + p.one[l].map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
     $('pd-tech-h').textContent = u.teknik;
@@ -265,9 +279,9 @@
     gal.hidden = !p.gorsel.length;
     gal.classList.toggle('is-tek', p.gorsel.length < 2);
     $('pd-thumbs').innerHTML = p.gorsel.map(function (g, k) {
-      return '<button type="button" data-k="' + k + '" aria-label="' + esc(g[1][l]) + '"><img src="' + g[0] + '" alt="" loading="lazy"></button>';
+      return '<button type="button" data-k="' + k + '" aria-label="' + esc(g[1][l]) + '"><img src="' + srcs(g)[0] + '" alt="" loading="lazy"></button>';
     }).join('');
-    if (p.gorsel.length) { $('pd-img').src = p.gorsel[sira][0]; gorselGoster(sira); }
+    if (p.gorsel.length) gorselGoster(sira, true);
   }
 
   function ac(id) {
@@ -275,6 +289,12 @@
     sonOdak = document.activeElement;
     acik = id; sira = 0; doldur();
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    var kaynak = document.querySelector('[data-proje="' + id + '"]'), ic = dlg.querySelector('.pd__in');
+    if (kaynak && ic) {
+      var a = kaynak.getBoundingClientRect(), b = ic.getBoundingClientRect();
+      ic.style.setProperty('--ox', Math.round(a.left + a.width / 2 - b.left) + 'px');
+      ic.style.setProperty('--oy', Math.round(a.top + a.height / 2 - b.top) + 'px');
+    }
     root.classList.add('pd-acik');
     dlg.querySelector('.pd__in').scrollTop = 0;
   }
@@ -284,9 +304,13 @@
     setTimeout(function () {
       dlg.classList.remove('is-closing'); dlg.close(); root.classList.remove('pd-acik'); acik = null;
       if (sonOdak && sonOdak.focus) sonOdak.focus();
-    }, 220);
+    }, 260);
   }
 
+  // Hero plane: each screen opens its project.
+  document.querySelectorAll('[data-open]').forEach(function (el) {
+    el.addEventListener('click', function () { ac(el.getAttribute('data-open')); });
+  });
   document.querySelectorAll('[data-proje]').forEach(function (el) {
     el.classList.add('is-acilir');
     el.addEventListener('click', function (e) {
@@ -305,26 +329,39 @@
       if (e.key === 'ArrowRight') gorselGoster(sira + 1);
       if (e.key === 'ArrowLeft') gorselGoster(sira - 1);
     });
+    // Swipe between images on touch screens.
+    var sx = null, sy = 0, sahne = $('pd-stage');
+    sahne.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') { sx = e.clientX; sy = e.clientY; } });
+    sahne.addEventListener('pointerup', function (e) {
+      if (sx == null) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) gorselGoster(sira + (dx < 0 ? 1 : -1));
+    });
+    sahne.addEventListener('pointercancel', function () { sx = null; });
   }
   document.addEventListener('dil', function () { if (acik) doldur(); });
 
   /* ---------------- Asfalya damage lens ---------------- */
   // Boxes measured on the 1280×720 model output frames (x, y, w, h in px).
+  var W8 = P + 'w/';
   var TESPIT = [
-    { src: P + 'asfalya-1.jpg', x: 515, y: 553, w: 190, h: 149, sinif: { en: 'Alligator crack', tr: 'Timsah sırtı çatlak' }, guven: '0.72', ap: '0.715' },
-    { src: P + 'asfalya-2.jpg', x: 566, y: 585, w: 44, h: 128, sinif: { en: 'Longitudinal crack', tr: 'Boyuna çatlak' }, guven: '0.50', ap: '0.598' },
-    { src: P + 'asfalya-2.jpg', x: 442, y: 532, w: 233, h: 56, sinif: { en: 'Transverse crack', tr: 'Enine çatlak' }, guven: '0.35', ap: '0.538' }
+    { src: W8 + 'asfalya-1-1280.webp', x: 515, y: 553, w: 190, h: 149, sinif: { en: 'Alligator crack', tr: 'Timsah sırtı çatlak' }, guven: '0.72', ap: '0.715' },
+    { src: W8 + 'asfalya-2-1280.webp', x: 566, y: 585, w: 44, h: 128, sinif: { en: 'Longitudinal crack', tr: 'Boyuna çatlak' }, guven: '0.50', ap: '0.598' },
+    { src: W8 + 'asfalya-2-1280.webp', x: 442, y: 532, w: 233, h: 56, sinif: { en: 'Transverse crack', tr: 'Enine çatlak' }, guven: '0.35', ap: '0.538' }
   ];
   var lens = $('lens');
   if (lens) {
     var img = lens.querySelector('img'), kutu = lens.querySelector('.lens__box'), zoom = lens.querySelector('.lens__zoom');
     var dd = lens.querySelectorAll('.lens__data dd');
-    var ti = 0, dongu = null, hazir = false;
-    TESPIT.forEach(function (t) { var i = new Image(); i.src = t.src; });
+    var ti = 0, dongu = null, hazir = false, yuklendi = false;
+    // Load the second frame only once someone reaches for the lens.
+    var onYukle = function () { if (yuklendi) return; yuklendi = true; TESPIT.forEach(function (t) { var i = new Image(); i.src = t.src; }); };
 
     var yerlestir = function () {
       var t = TESPIT[ti], W = 1280, H = 720;
-      if (img.getAttribute('src') !== t.src) img.setAttribute('src', t.src);
+      if (img.getAttribute('src') !== t.src) { img.removeAttribute('srcset'); img.setAttribute('src', t.src); }
+      // Panel sits on the side away from the box.
+      lens.classList.toggle('is-sag', (t.x + t.w / 2) / W < 0.5);
       kutu.style.setProperty('--x', (t.x / W * 100) + '%');
       kutu.style.setProperty('--y', (t.y / H * 100) + '%');
       kutu.style.setProperty('--w', (t.w / W * 100) + '%');
@@ -341,7 +378,7 @@
       dd[2].textContent = t.w + ' × ' + t.h + ' px'; dd[3].textContent = t.ap;
     };
     var basla = function () {
-      if (hazir) return; hazir = true;
+      if (hazir) return; hazir = true; onYukle();
       ti = 0; yerlestir(); lens.classList.add('is-on');
       dongu = setInterval(function () { ti = (ti + 1) % TESPIT.length; lens.classList.add('is-next'); setTimeout(function () { yerlestir(); lens.classList.remove('is-next'); }, 260); }, 2800);
     };
@@ -353,6 +390,9 @@
     lens.addEventListener('mouseleave', bitir);
     lens.addEventListener('focus', basla);
     lens.addEventListener('blur', bitir);
+    lens.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var c = lens.closest('[data-proje]'); if (c) ac(c.getAttribute('data-proje')); }
+    });
     // Touch: the first tap opens the lens, the next tap opens the project.
     var dokunusAcildi = false;
     lens.addEventListener('touchstart', function () { if (!hazir) { basla(); dokunusAcildi = true; } }, { passive: true });
