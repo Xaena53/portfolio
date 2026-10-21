@@ -116,6 +116,13 @@
       }
       return seq(steps);
     },
+    // Phone mockups: cycle the real mobile screens of each live site.
+    ph: function (el) {
+      var imgs = $$('.ph__screen img', el), steps = [];
+      var show = function (i) { return function () { imgs.forEach(function (m, k) { m.classList.toggle('is-on', k === i); }); }; };
+      for (var c = 0; c < 3; c++) imgs.forEach(function (_, i) { steps.push([c === 0 && i === 0 ? 1200 : 2600, show((i + 1) % imgs.length)]); });
+      return seq(steps);
+    },
     // RepChat: the phone cycles priority card → topic picker → email code.
     rc: function (el) {
       var imgs = $$('.rc__screen img', el), tabs = $$('.rc__steps li', el), steps = [];
@@ -202,6 +209,7 @@
   if ($('#gate')) bindMini($('#gate'), function (el) { return MINIS.steps(el, [600, 1600, 700, 600]); }, null, true);
   if ($('#ku-line')) bindMini($('.ku'), MINIS.ku, null, true);
   if ($('#rc')) bindMini($('#rc'), MINIS.rc, null, true);
+  $$('.ph').forEach(function (f) { bindMini(f, MINIS.ph, f.closest('article'), true); });
   if ($('#sync')) bindMini($('#sync'), MINIS.sync);
   if ($('#cert')) bindMini($('#cert'), MINIS.cert);
   if ($('#pages')) bindMini($('#pages'), MINIS.pages);

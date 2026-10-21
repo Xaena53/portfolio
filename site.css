@@ -562,3 +562,39 @@
   .cell img { transform: none !important; }
   .plane { transform: rotateX(18deg) rotateZ(-8deg) translate3d(8%, 0, 0); }
 }
+
+/* Phone mockup cycling real mobile screens (shared by AnimeRank, Kurenai, EKT, Çakmak Pen) */
+.ph-host { position: relative; }
+.player { aspect-ratio: 16 / 9; }
+.player img { object-position: center; }
+.ph { position: absolute; z-index: 2; right: 4%; bottom: -7%; width: clamp(88px, 23%, 150px); aspect-ratio: 585 / 1266; padding: 5px; border-radius: 22px; background: #0e0d0c;
+  box-shadow: 0 0 0 1px rgba(236, 226, 208, .16), 0 28px 56px -22px rgba(0, 0, 0, .7); rotate: -4deg; transition: transform 600ms var(--ease-out), rotate 600ms var(--ease-out); }
+.ph::before { content: ""; position: absolute; z-index: 1; top: 9px; left: 50%; width: 26%; height: 5px; margin-left: -13%; border-radius: 99px; background: #0e0d0c; }
+.ph__screen { position: relative; width: 100%; height: 100%; border-radius: 17px; overflow: hidden; background: #1c1c1c; }
+.ph__screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transform: scale(1.03); transition: opacity 650ms var(--ease-out), transform 1000ms var(--ease-out); }
+.ph__screen img.is-on { opacity: 1; transform: none; }
+.ph-host--ekt .ph { bottom: 6%; right: 6%; }
+.cell--cp .ph { bottom: -10%; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  article:hover .ph { transform: translateY(-8px); rotate: -2deg; }
+}
+@media (max-width: 760px) { .ph { width: 26%; border-radius: 18px; padding: 4px; } .ph__screen { border-radius: 14px; } }
+
+/* Skills orbit: brand logos in tiles (Simple Icons, CC0) */
+.orb__p b.ic { padding: 0; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line-2); background: var(--surface-2);
+  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .55); color: var(--c); transition: transform 300ms var(--ease-out), border-color 300ms; }
+:root[data-theme="dark"] .orb__p b.ic { color: var(--cd); }
+.orb__p b.ic svg { width: 22px; height: 22px; fill: currentColor; }
+.orb__p b.ic .ic__tx { font: 700 10px/1 var(--mono); letter-spacing: .02em; }
+.orb__ring:first-child .orb__p b.ic { width: 48px; height: 48px; }
+.orb__p b.ic::after { content: attr(data-n); position: absolute; top: calc(100% + 6px); left: 50%; translate: -50% 0; padding: 2px 7px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line-2);
+  font: 500 .625rem/1.3 var(--mono); color: var(--text-2); white-space: nowrap; opacity: 0; transition: opacity 200ms; pointer-events: none; }
+.orb__p b.ic:hover { border-color: var(--c); }
+.orb__p b.ic:hover::after { opacity: 1; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  .orb__spin { animation-duration: 90s; }
+  .orb__p b { animation-duration: 90s; }
+}
+@media (max-width: 760px) { .orb__p b.ic { width: 36px; height: 36px; border-radius: 10px; } .orb__p b.ic svg { width: 18px; height: 18px; } .orbit .orb__ring:first-child .orb__p b.ic { width: 40px; height: 40px; } }
+.cell--ku .ph { bottom: auto; top: -8%; }

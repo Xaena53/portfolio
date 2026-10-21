@@ -92,11 +92,11 @@
     't4.h': 'Bitmeyeni söyle.', 't4.p': 'Her depoda açık maddeleriyle bir durum tablosu bulunur: tutturulamamış bir duyarlılık hedefi, yalnızca simülasyonda çalışan bir bağlantı, hâlâ boş duran bir yasal izin klasörü.',
 
     'ex.h': 'Deneyim',
-    'ex1.when': '2024 — bugün', 'ex1.h': 'Serbest yazılım geliştirici',
+    'ex1.when': '2026 — bugün', 'ex1.h': 'Serbest yazılım geliştirici',
     'ex1.d': 'Müşteriler için ilk satırdan canlıya backend ve web siteleri: EKT Akademi, Çakmak Pen ve Bal Defteri.',
     'ex2.when': 'Temmuz — Ağustos 2026', 'ex2.h': 'Stajyer, BAUM',
     'ex2.d': 'Anadolu Üniversitesi Bilgisayar Araştırma ve Uygulama Merkezi. Yol hasarı tespit sistemi Asfalya’yı geliştirip sundum.',
-    'ed.when': '2025 — bugün', 'ed.deg': 'Ön lisans, Arka-Yüz Yazılım Geliştirme.',
+    'ed.when': 'Eylül 2025 — bugün', 'ed.deg': 'Ön lisans, Arka-Yüz Yazılım Geliştirme.',
     'ex.more': 'Tüm sorumluluklar',
     'ex1.b1': 'EKT Akademi’nin hazır statik ön yüzünün arkasına tüm backend’i yazdım ve AWS üzerinde canlıya aldım.',
     'ex1.b2': 'Çakmak Pen kurumsal sitesini geliştirip Cloudflare Pages üzerinde yayınladım.',

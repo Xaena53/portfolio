@@ -108,6 +108,7 @@
         tr: ['Altyazı kaymasını sesteki konuşmaya göre ölçen senkron denetleyicisi', 'Kesintisiz dağıtım ve oynatma yavaşlayınca arka plan işlerini kısan bir bekçi', 'Backend’de 49 Jest test grubu']
       },
       gorsel: [
+        [P + 'animerank-player.jpg', { en: 'Player: episode 1 of Frieren at 10:16, H.264 stream with the custom controls.', tr: 'Oynatıcı: Frieren 1. bölüm 10:16’da, özel kontrollerle H.264 yayın.' }],
         [P + 'animerank-2.jpg', { en: 'Anime library: 2,465 titles merged from Jikan, AniList and Kitsu, with search, sort, format, genre and year filters.', tr: 'Anime Kütüphanesi: Jikan, AniList ve Kitsu’dan birleştirilen 2.465 yapım; arama, sıralama, format, tür ve yıl filtreleri.' }],
         [P + 'animerank-3.jpg', { en: 'Series page episode list: thumbnail grid with episode titles and air dates.', tr: 'Dizi sayfasındaki bölüm listesi: küçük görseller, bölüm adları ve yayın tarihleriyle ızgara.' }],
         [P + 'animerank-4.jpg', { en: 'Membership page: 5-day free trial, monthly / 3-month / yearly toggle and Starter, Ultra and lifetime Legendary plans.', tr: 'Üyelik sayfası: 5 gün ücretsiz deneme, aylık / 3 aylık / yıllık seçimi ve Başlangıç, Ultra ile ömür boyu Legendary paketleri.' }],
