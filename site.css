@@ -448,7 +448,7 @@ body { padding-top: 73px; }
 /* ---------- skills ---------- */
 .skills { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-8); align-items: start; }
 @media (min-width: 1025px) { .orbit { position: sticky; top: 48px; } }
-.orbit { position: relative; width: min(440px, 100%); aspect-ratio: 1; margin-inline: auto; container-type: inline-size; }
+.orbit { position: relative; width: min(520px, 100%); aspect-ratio: 1; margin-inline: auto; container-type: inline-size; }
 .orb__spin { position: absolute; inset: 0; }
 .orb__ring { position: absolute; left: 50%; top: 50%; width: calc(var(--rf) * 2cqi); height: calc(var(--rf) * 2cqi); margin: calc(var(--rf) * -1cqi) 0 0 calc(var(--rf) * -1cqi); border: 1px solid var(--line-2); border-radius: 50%; }
 .orb__p { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform: rotate(var(--a)) translateX(calc(var(--rf) * 1cqi)) rotate(calc(-1 * var(--a))); }
