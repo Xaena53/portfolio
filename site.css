@@ -194,15 +194,16 @@ body { padding-top: 73px; }
   transition: transform 560ms cubic-bezier(.4, 0, .2, 1), box-shadow 560ms cubic-bezier(.4, 0, .2, 1), filter 460ms ease; }
 :root[data-theme="light"] .shot__in { box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(40, 30, 15, .35), 0 10px 24px -12px rgba(40, 30, 15, .18); }
 .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--img-dim)); }
-@media (hover: hover) {
-  /* entering: the hovered card jumps to the top of the stack (z-index, no 3D depth, so two cards can never slice through each other), then lifts and grows
-     smoothly, its shadow deepens and a champagne edge appears; the others dim. Leaving reverses it, and the z-index only drops after the card has settled. */
-  .shot:hover { z-index: 50; transition-delay: 0s; }
-  .shot:hover .shot__in { transform: translate3d(0, -14px, 0) scale(1.06); transition: transform 640ms cubic-bezier(.16, 1, .3, 1), box-shadow 640ms cubic-bezier(.16, 1, .3, 1), filter 460ms ease;
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 70%, transparent), 0 46px 70px -28px rgba(0, 0, 0, .7), 0 18px 34px -14px rgba(0, 0, 0, .5); }
-  :root[data-theme="light"] .shot:hover .shot__in { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 80%, transparent), 0 46px 70px -28px rgba(40, 30, 15, .45), 0 18px 34px -14px rgba(40, 30, 15, .3); }
-  .plane:has(.shot:hover) .shot:not(:hover) .shot__in { filter: brightness(.7) saturate(.85); }
-}
+/* Hover is shown on a ghost copy of the card that lives above the whole stack. The real card never changes its place in the stack, so nothing pops or
+   gets cut: the ghost fades in at the card's own spot (identical pixels), then lifts, and on leave it settles back and dissolves into the original. */
+.ghost { position: absolute; width: 40%; aspect-ratio: 16 / 10; border-radius: 12px; z-index: 60; pointer-events: none; opacity: 0;
+  transition: opacity 180ms ease 400ms; }
+.ghost .shot__in { transition: transform 560ms cubic-bezier(.4, 0, .2, 1), box-shadow 560ms cubic-bezier(.4, 0, .2, 1); }
+.ghost.on { opacity: 1; transition: opacity 110ms ease 0s; }
+.ghost.on .shot__in { transform: translate3d(0, -14px, 0) scale(1.06); transition: transform 640ms cubic-bezier(.16, 1, .3, 1) 90ms, box-shadow 640ms cubic-bezier(.16, 1, .3, 1) 90ms;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 70%, transparent), 0 46px 70px -28px rgba(0, 0, 0, .7), 0 18px 34px -14px rgba(0, 0, 0, .5); }
+:root[data-theme="light"] .ghost.on .shot__in { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 80%, transparent), 0 46px 70px -28px rgba(40, 30, 15, .45), 0 18px 34px -14px rgba(40, 30, 15, .3); }
+.plane[data-lit] .shot:not(.is-lit) .shot__in { filter: brightness(.7) saturate(.85); }
 .shot--ekt { left: 42%; top: 28%; --zi: 6; }
 .shot--ekt .shot__cap { top: 38px; }
 .shot--ekt img { top: 26px; height: calc(100% - 26px); object-position: top; }
@@ -239,8 +240,8 @@ body { padding-top: 73px; }
   .facts > div:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: var(--s-4); }
   .btn { height: 46px; padding: 0 18px; }
   .hero__vis { width: 150%; margin-left: 2%; aspect-ratio: 16 / 12; }
-  .shot { width: 52%; border-radius: 9px; }
-  .shot--back { width: 28%; }
+  .shot, .ghost { width: 52%; border-radius: 9px; }
+  .shot--back, .ghost.shot--back { width: 28%; }
   .shot__cap { left: 8px; top: 8px; padding: 5px 8px; font-size: .6875rem; }
   .shot--ekt .shot__cap { top: 32px; }
 }
@@ -619,7 +620,7 @@ body { padding-top: 73px; }
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .shot:hover .shot__in { transform: none !important; }
+  .ghost.on .shot__in { transform: none !important; }
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; animation-iteration-count: 1 !important; }
   .cell img { transform: none !important; }
   .plane { transform: rotateX(18deg) rotateZ(-8deg) translate3d(2%, 0, 0) scale(.86); }

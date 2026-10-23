@@ -298,5 +298,24 @@
     });
   });
 
+  /* ---------------- hero cards: hover on a ghost layer, so the real stack never reorders ---------------- */
+  (function () {
+    var plane = document.querySelector('.plane');
+    if (!plane || !matchMedia('(hover: hover)').matches) return;
+    plane.querySelectorAll('.shot').forEach(function (shot) {
+      var ghost = document.createElement('div');
+      ghost.className = shot.className.replace('shot ', 'ghost ').replace(/^shot$/, 'ghost');
+      ghost.setAttribute('aria-hidden', 'true');
+      ghost.appendChild(shot.querySelector('.shot__in').cloneNode(true));
+      plane.appendChild(ghost);
+      var on = function () { ghost.classList.add('on'); shot.classList.add('is-lit'); plane.setAttribute('data-lit', ''); };
+      var off = function () { ghost.classList.remove('on'); shot.classList.remove('is-lit'); plane.removeAttribute('data-lit'); };
+      shot.addEventListener('pointerenter', on);
+      shot.addEventListener('pointerleave', off);
+      shot.addEventListener('focus', function () { if (shot.matches(':focus-visible')) on(); });
+      shot.addEventListener('blur', off);
+    });
+  })();
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
