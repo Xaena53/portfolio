@@ -22,15 +22,21 @@ body { padding-top: 73px; }
 .bar.is-scrolled .bar__in { min-height: 56px; width: calc(100% - 44px); }
 @media (prefers-reduced-motion: reduce) { .bar, .bar__in { transition: none; } }
 .brand { display: inline-flex; align-items: center; gap: var(--s-3); font-weight: 500; font-size: 15px; white-space: nowrap; }
-/* Name lockup: two lines, and a champagne light band that crosses the letters every few seconds */
-.brand__n { display: flex; flex-direction: column; gap: 5px; line-height: 1; }
-.brand__name { --sheen-base: #D9D3C8; --sheen-hi: #E8C98A; font: 600 17px/1 var(--display); letter-spacing: -.012em; color: var(--text);
-  background: linear-gradient(104deg, var(--sheen-base) 0%, var(--sheen-base) 36%, var(--sheen-hi) 50%, var(--sheen-base) 64%, var(--sheen-base) 100%); background-size: 280% 100%; background-position: 130% 0;
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brand-sheen 8s var(--ease-io) 1.4s infinite; }
-.brand__tag { font: 500 9.5px/1 var(--mono); font-stretch: 87.5%; letter-spacing: .22em; color: var(--accent-text); opacity: .85; }
-[data-theme="light"] .brand__name { --sheen-base: #1B1814; --sheen-hi: #A5865A; }
-@keyframes brand-sheen { 0% { background-position: 130% 0; } 15% { background-position: -30% 0; } 100% { background-position: -30% 0; } }
-@media (prefers-reduced-motion: reduce) { .brand__name { animation: none; background: none; -webkit-text-fill-color: var(--text); } }
+/* Name lockup: high-contrast serif with an italic surname; a champagne light pass crosses the name and the logo together */
+.brand__n { display: flex; flex-direction: column; gap: 6px; line-height: 1; }
+.brand__name { --sheen-base: #E7E1D5; --sheen-gold: #EFD08F; --sheen-core: #FFFBEE;
+  font: 400 27px/1 "Instrument Serif", "Schibsted Grotesk", Georgia, serif; letter-spacing: .005em; color: var(--text);
+  background: linear-gradient(104deg, var(--sheen-base) 0%, var(--sheen-base) 43%, var(--sheen-gold) 47%, var(--sheen-core) 50%, var(--sheen-gold) 53%, var(--sheen-base) 57%, var(--sheen-base) 100%); background-size: 600% 100%; background-position: 74% 0;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brand-sheen 3.8s var(--ease-io) .8s infinite; }
+.brand__name em { font-style: italic; }
+.brand__tag { font: 500 9.5px/1 var(--mono); font-stretch: 87.5%; letter-spacing: .26em; color: var(--accent-text); opacity: .9; }
+[data-theme="light"] .brand__name { --sheen-base: #1B1814; --sheen-gold: #8C7656; --sheen-core: #C9A66B; }
+@keyframes brand-sheen { 0% { background-position: 74% 0; } 40% { background-position: 26% 0; } 100% { background-position: 26% 0; } }
+/* the logo's ink strokes get the same pass, in step with the name */
+.brand .logo::after { background: linear-gradient(104deg, var(--text) 0%, var(--text) 43%, var(--sheen-gold, #EFD08F) 47%, var(--sheen-core, #FFFBEE) 50%, var(--sheen-gold, #EFD08F) 53%, var(--text) 57%, var(--text) 100%); background-size: 600% 100%; background-position: 74% 0; animation: brand-sheen 3.8s var(--ease-io) .8s infinite; }
+.brand { --sheen-gold: #EFD08F; --sheen-core: #FFFBEE; }
+[data-theme="light"] .brand { --sheen-gold: #8C7656; --sheen-core: #C9A66B; }
+@media (prefers-reduced-motion: reduce) { .brand__name { animation: none; background: none; -webkit-text-fill-color: var(--text); } .brand .logo::after { animation: none; background: var(--text); } }
 .mark { display: inline-block; width: 42px; height: 42px; flex: none; }
 .mark--sm { width: 30px; height: 30px; }
 /* Brand logo: two stroke layers, ink follows --text and the honey stroke follows --accent, so both themes stay in tune */
