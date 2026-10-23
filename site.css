@@ -660,7 +660,10 @@ body { padding-top: 73px; }
 .orb__ring { pointer-events: none; }
 .orb__p b.ic { pointer-events: auto; }
 .orb__ring:has(b.ic:hover) { z-index: 5; }
-.orb__p b.ic:hover { border-color: var(--c); }
+/* always on: a thin frame and a soft glow in the logo's own colour; hover only reveals the name */
+.orb__p b.ic { --tone: var(--c); border-color: color-mix(in srgb, var(--tone) 72%, transparent); box-shadow: 0 0 14px -1px color-mix(in srgb, var(--tone) 34%, transparent), 0 0 3px color-mix(in srgb, var(--tone) 28%, transparent); }
+:root[data-theme="dark"] .orb__p b.ic { --tone: var(--cd); }
+:root[data-theme="light"] .orb__p b.ic { box-shadow: 0 0 12px -2px color-mix(in srgb, var(--tone) 26%, transparent); }
 .orb__p b.ic:hover::after { opacity: 1; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (prefers-reduced-motion: no-preference) {
