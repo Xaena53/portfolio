@@ -457,9 +457,13 @@ body { padding-top: 73px; }
 .orb__c { position: absolute; left: 50%; top: 50%; translate: -50% -50%; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; border: 1px solid var(--line-2); background: var(--surface-2); font: 600 20px/1 var(--display); letter-spacing: -.03em; color: var(--accent-text); }
 /* the whole map turns as one piece, so labels keep their spacing */
 @media (prefers-reduced-motion: no-preference) {
-  .orb__spin { animation: orbit 140s linear infinite; }
-  .orb__p b { animation: orbit-r 140s linear infinite; }
-  .orbit.is-paused .orb__spin, .orbit.is-paused .orb__p b { animation-play-state: paused; }
+  /* every ring turns on its own: inner and outer clockwise, the middle one the other way, each at its own pace; the logos counter-turn to stay upright */
+  .orb__ring { animation: orbit var(--sp, 140s) linear infinite var(--dr, normal); }
+  .orb__ring:nth-child(1) { --sp: 110s; --dr: normal; }
+  .orb__ring:nth-child(2) { --sp: 150s; --dr: reverse; }
+  .orb__ring:nth-child(3) { --sp: 190s; --dr: normal; }
+  .orb__p b { animation: orbit-r var(--sp, 140s) linear infinite var(--dr, normal); }
+  .orbit.is-paused .orb__ring, .orbit.is-paused .orb__p b { animation-play-state: paused; }
 }
 @keyframes orbit { to { rotate: 360deg; } }
 @keyframes orbit-r { to { rotate: -360deg; } }
@@ -652,12 +656,17 @@ body { padding-top: 73px; }
 .orb__ring:first-child .orb__p b.ic { width: 48px; height: 48px; }
 .orb__p b.ic::after { content: attr(data-n); position: absolute; top: calc(100% + 6px); left: 50%; translate: -50% 0; padding: 2px 7px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line-2);
   font: 500 .625rem/1.3 var(--mono); color: var(--text-2); white-space: nowrap; opacity: 0; transition: opacity 200ms; pointer-events: none; }
+/* the rings are filled circles stacked on top of each other: they must not catch the pointer, only the logos do */
+.orb__ring { pointer-events: none; }
+.orb__p b.ic { pointer-events: auto; }
+.orb__ring:has(b.ic:hover) { z-index: 5; }
 .orb__p b.ic:hover { border-color: var(--c); }
 .orb__p b.ic:hover::after { opacity: 1; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (prefers-reduced-motion: no-preference) {
-  .orb__spin { animation-duration: 90s; }
-  .orb__p b { animation-duration: 90s; }
+  .orb__ring:nth-child(1) { --sp: 70s; }
+  .orb__ring:nth-child(2) { --sp: 95s; }
+  .orb__ring:nth-child(3) { --sp: 120s; }
 }
 @media (max-width: 760px) { .orb__p b.ic { width: 36px; height: 36px; border-radius: 10px; } .orb__p b.ic svg { width: 18px; height: 18px; } .orbit .orb__ring:first-child .orb__p b.ic { width: 40px; height: 40px; } }
 .cell--ku .ph { bottom: auto; top: -8%; }
