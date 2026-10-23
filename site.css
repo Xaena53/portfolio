@@ -193,7 +193,7 @@ body { padding-top: 73px; }
   /* leaving: settles back along the same path, slightly slower and softer than the way in */
   transition: transform 560ms cubic-bezier(.4, 0, .2, 1), box-shadow 560ms cubic-bezier(.4, 0, .2, 1), filter 460ms ease; }
 :root[data-theme="light"] .shot__in { box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(40, 30, 15, .35), 0 10px 24px -12px rgba(40, 30, 15, .18); }
-.shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--img-dim)); }
+.shot img, .ghost img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--img-dim)); }
 /* Hover is shown on a ghost copy of the card that lives above the whole stack. The real card never changes its place in the stack, so nothing pops or
    gets cut: the ghost fades in at the card's own spot (identical pixels), then lifts, and on leave it settles back and dissolves into the original. */
 .ghost { position: absolute; width: 40%; aspect-ratio: 16 / 10; border-radius: 12px; z-index: 60; pointer-events: none; opacity: 0;
