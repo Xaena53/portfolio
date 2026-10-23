@@ -29,7 +29,7 @@
     })();
   </script>
   <link rel="stylesheet" href="tokens.css?v=3">
-  <link rel="stylesheet" href="site.css?v=43">
+  <link rel="stylesheet" href="site.css?v=45">
   <link rel="stylesheet" href="detail.css">
 </head>
 <body>
@@ -488,12 +488,6 @@
         <ol>
           <li class="tl__e">
             <span class="tl__dot" aria-hidden="true"></span>
-            <p class="mono tl__when" data-i18n="ex2.when">Jul — Aug 2026</p>
-            <h3 data-i18n="ex2.h">Intern, BAUM</h3>
-            <p data-i18n="ex2.d">Anadolu University Computer Research and Application Centre. Built and presented Asfalya, the road-damage detection system.</p>
-          </li>
-          <li class="tl__e">
-            <span class="tl__dot" aria-hidden="true"></span>
             <p class="mono tl__when" data-i18n="ed.when">Sep 2025 — present</p>
             <h3 data-i18n="rec.edu.v">Anadolu University</h3>
             <p data-i18n="ed.deg">Associate degree, Back-End Software Development.</p>
@@ -504,33 +498,68 @@
             <h3 data-i18n="ex1.h">Freelance developer</h3>
             <p data-i18n="ex1.d">Backends and websites for clients, from first commit to production: EKT Akademi, Çakmak Pen and Bal Defteri.</p>
           </li>
+          <li class="tl__e">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <p class="mono tl__when" data-i18n="ex2.when">Jul — Aug 2026</p>
+            <h3 data-i18n="ex2.h">Intern, BAUM</h3>
+            <p data-i18n="ex2.d">Anadolu University Computer Research and Application Centre. Built and presented Asfalya, the road-damage detection system.</p>
+          </li>
         </ol>
 
         <details class="more">
           <summary><span data-i18n="ex.more">Full responsibilities</span><i class="plus" aria-hidden="true"></i></summary>
           <div class="more__body"><div class="more__in">
             <div>
+              <h4 data-i18n="ed.h">Education</h4>
+              <p data-i18n="ed.p">Backend development, database systems, API design, microservice architectures and modern software practice, studied alongside building and shipping the projects above.</p>
               <h4 data-i18n="ex1.h">Freelance developer</h4>
               <ul class="bullets">
                 <li data-i18n="ex1.b1">Wrote the full backend of EKT Akademi behind an existing static front end and took it live on AWS.</li>
+                <li data-i18n="ex1.b5">EKT Akademi: Argon2id passwords, server-side sessions with hashed tokens, role-based public, student and admin panels, PDF certificates with QR verification, file uploads, email and SMS reminders and live-class links.</li>
                 <li data-i18n="ex1.b2">Built and launched the Çakmak Pen corporate site on Cloudflare Pages.</li>
+                <li data-i18n="ex1.b6">Çakmak Pen: 23 static pages with no build step, design tokens from the brand guide, WCAG contrast checks, JSON-LD, a sitemap, llms.txt and six security headers.</li>
+                <li data-i18n="ex1.b7">Bal Defteri: a server-rendered honey shop on Cloudflare Workers with D1 and KV, Turnstile, PayTR payments, automatic order emails, a nonce-based content security policy and CI on every pull request.</li>
                 <li data-i18n="ex1.b3">Designed REST and GraphQL APIs; cut query time by 60% with Redis-based caching.</li>
                 <li data-i18n="ex1.b4">Automated deployments with Docker and CI/CD pipelines.</li>
               </ul>
-              <h4>AnimeRank</h4>
-              <ul class="bullets">
-                <li data-i18n="exa.b1">Design, front end, backend, media pipeline and server operations of a video platform.</li>
-                <li data-i18n="exa.b2">Transcoding, subtitle synchronisation and P2P plus server delivery across several media servers.</li>
-              </ul>
-            </div>
-            <div>
               <h4 data-i18n="ex2.h">Intern, BAUM</h4>
               <ul class="bullets">
                 <li data-i18n="ex2.b1">30 working days, 6 July to 17 August 2026.</li>
                 <li data-i18n="ex2.b2">Trained and evaluated a YOLO road-damage model and built the map, scoring and reporting backend around it.</li>
+                <li data-i18n="ex2.b3">Reached an mAP@0.5 of 0.632 across five classes and pinned each detection to a street with GPS and OpenStreetMap map-matching; 7,704 detections were deduplicated into tracked damage records.</li>
+                <li data-i18n="ex2.b4">Made privacy a rule in code: an unmasked frame is rejected, so faces and plates are blurred before detection and raw video never reaches the server.</li>
+                <li data-i18n="ex2.b5">Delivered a live damage map with neighbourhood scores and weekly PDF reports, and presented the system at BAUM.</li>
               </ul>
-              <h4 data-i18n="ed.h">Education</h4>
-              <p data-i18n="ed.p">Backend development, database systems, API design, microservice architectures and modern software practice, studied alongside building and shipping the projects above.</p>
+            </div>
+            <div>
+              <h4 data-i18n="ex.own">Own products</h4>
+              <h5>AnimeRank</h5>
+              <ul class="bullets">
+                <li data-i18n="exa.b1">Design, front end, backend, media pipeline and server operations of a video platform.</li>
+                <li data-i18n="exa.b2">Transcoding, subtitle synchronisation and P2P plus server delivery across several media servers.</li>
+                <li data-i18n="exa.b3">A subtitle sync checker that measures offsets against speech in the audio, zero-downtime deployments, a watchdog that throttles background jobs when playback slows, and 49 Jest suites on the backend.</li>
+              </ul>
+              <h5>Kurenai</h5>
+              <ul class="bullets">
+                <li data-i18n="exk.b1">An AI subtitle service: WhisperX timing, OCR for on-screen text and context-aware translation into eight languages, delivered as .ass files.</li>
+                <li data-i18n="exk.b2">An API with a desktop client, a subtitle cache that P2P players query by magnet hash, audio fingerprint matching, per-client rate limits and a swappable speech, OCR and translation provider layer.</li>
+              </ul>
+              <h5>RepChat</h5>
+              <ul class="bullets">
+                <li data-i18n="exr.b1">An embeddable live-support widget: a 5 KB loader that opens an isolated iframe UI, an operator panel, atomic ticket claiming, domain-locked widget keys, spam and ban controls and an end-to-end test suite.</li>
+              </ul>
+              <h5>Warden of the Fields</h5>
+              <ul class="bullets">
+                <li data-i18n="exw.b1">A first-person survival game in Unreal Engine 5.8: one C++ module split into Core, Character, Survival, Building and World, data-driven survival, villager and building systems, automation tests and CI. Milestone M0 is complete with 34 of 34 tests passing.</li>
+              </ul>
+              <h5>Aegis</h5>
+              <ul class="bullets">
+                <li data-i18n="exg.b1">An open-source MCP server (AGPL-3.0) that runs Google Ads and Meta campaigns behind server-side spending guards and asks the mobile network, through CAMARA and Nokia Network-as-Code, whether the approver’s line was taken over before it asks for approval.</li>
+              </ul>
+              <h4 data-i18n="op.h">Open source</h4>
+              <ul class="bullets">
+                <li data-i18n="exo.b1">A merged refactor in microsoft/vscode (#329128) and a fix for NASA’s Open MCT in review (#8393).</li>
+              </ul>
             </div>
           </div></div>
         </details>
@@ -708,7 +737,7 @@
     </div>
   </dialog>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
   <script src="projects.js"></script>
   <script src="field.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/animejs@4.2.2/dist/bundles/anime.umd.min.js"></script>
