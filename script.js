@@ -312,7 +312,7 @@
       var on = function () { clearTimeout(wait); ghost.classList.add('on'); shot.classList.add('is-lit'); plane.setAttribute('data-lit', ''); };
       var off = function () { clearTimeout(wait); ghost.classList.remove('on'); shot.classList.remove('is-lit'); plane.removeAttribute('data-lit'); };
       /* hover intent: the pointer has to rest on the card for a moment, so sweeping across the stack does not trigger every card */
-      shot.addEventListener('pointerenter', function () { clearTimeout(wait); wait = setTimeout(on, 280); });
+      shot.addEventListener('pointerenter', function () { clearTimeout(wait); wait = setTimeout(on, 140); });
       shot.addEventListener('pointerleave', off);
       shot.addEventListener('focus', function () { if (shot.matches(':focus-visible')) on(); });
       shot.addEventListener('blur', off);
