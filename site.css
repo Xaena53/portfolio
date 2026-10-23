@@ -12,9 +12,15 @@
 .fluid { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .6; transition: opacity 600ms var(--ease-out); }
 .fluid.is-on { opacity: 1; }
 
-/* ---------- top bar (not sticky) ---------- */
-.bar { position: relative; z-index: 20; border-bottom: 1px solid var(--line); background: var(--bg); }
-.bar__in { min-height: 72px; display: flex; align-items: center; gap: var(--s-6); }
+/* ---------- top bar: fixed, becomes an island on scroll ---------- */
+body { padding-top: 73px; }
+.bar { position: fixed; z-index: 60; top: 0; left: 0; right: 0; border: 1px solid transparent; border-bottom-color: var(--line); border-radius: 0; background: var(--bg);
+  transition: top var(--t-slow) var(--ease-out), left var(--t-slow) var(--ease-out), right var(--t-slow) var(--ease-out), border-radius var(--t-slow) var(--ease-out), background-color var(--t-base), border-color var(--t-base), box-shadow var(--t-base); }
+.bar__in { min-height: 72px; display: flex; align-items: center; gap: var(--s-6); transition: min-height var(--t-base) var(--ease-out), width var(--t-slow) var(--ease-out); }
+/* After the first scroll the bar floats as an island: inset from the sides, rounded, solid surface */
+.bar.is-scrolled { top: 10px; left: max(16px, calc((100% - 1120px) / 2)); right: max(16px, calc((100% - 1120px) / 2)); border-color: var(--line-2); border-radius: 28px; background: color-mix(in srgb, var(--surface) 94%, transparent); box-shadow: var(--shadow); }
+.bar.is-scrolled .bar__in { min-height: 56px; width: calc(100% - 44px); }
+@media (prefers-reduced-motion: reduce) { .bar, .bar__in { transition: none; } }
 .brand { display: inline-flex; align-items: center; gap: var(--s-3); font-weight: 500; font-size: 15px; white-space: nowrap; }
 .mark { display: inline-block; width: 42px; height: 42px; flex: none; }
 .mark--sm { width: 30px; height: 30px; }
@@ -28,7 +34,7 @@
 .nav__in { display: flex; gap: var(--s-5); }
 .nav a { position: relative; font-size: 14px; color: var(--text-2); transition: color var(--t-fast); padding-block: 6px; }
 .nav a:hover, .nav a.is-active { color: var(--text); }
-.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--t-base) var(--ease-out); }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: var(--accent-text); transform: scaleX(0); transform-origin: left; transition: transform var(--t-base) var(--ease-out); }
 .nav a.is-active::after { transform: scaleX(1); }
 .bar__tools { display: flex; align-items: center; gap: var(--s-3); }
 .seg { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
@@ -42,6 +48,8 @@
 .menu-btn { display: none; }
 
 @media (max-width: 860px) {
+  .bar.is-scrolled { left: 8px; right: 8px; }
+  .bar.is-scrolled .bar__in { width: calc(100% - 28px); }
   .bar__in { flex-wrap: wrap; gap: 0 var(--s-3); }
   .brand { margin-right: auto; }
   .bar__gh { display: none; }

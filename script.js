@@ -244,24 +244,34 @@
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) menu(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { menu(false); menuBtn.focus(); } });
 
-  /* ---------------- active nav link ---------------- */
+  /* ---------------- top bar island + active nav link ---------------- */
+  var bar = document.querySelector('.bar');
   var links = document.querySelectorAll('.nav a');
   var map = {};
   links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-  if ('IntersectionObserver' in window) {
-    var so = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          links.forEach(function (a) { a.classList.remove('is-active'); });
-          var a = map[e.target.id === 'more' ? 'work' : e.target.id === 'what' ? 'skills' : e.target.id];
-          if (a) a.classList.add('is-active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -60% 0px' });
-    ['work', 'more', 'skills', 'what', 'experience', 'open', 'contrib', 'contact'].forEach(function (id) {
-      var s = document.getElementById(id); if (s) so.observe(s);
+  var spyIds = ['work', 'more', 'skills', 'what', 'practice', 'experience', 'open', 'contrib', 'contact'];
+  var alias = { more: 'work', what: 'skills', practice: 'skills' };
+  var ticking = false;
+  function spy() {
+    ticking = false;
+    if (bar) bar.classList.toggle('is-scrolled', window.scrollY > 24);
+    var line = (bar ? bar.offsetHeight : 72) + Math.round(window.innerHeight * 0.28), cur = null;
+    spyIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= line) cur = alias[id] || id;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = 'contact';
+    links.forEach(function (a) {
+      var on = !!cur && map[cur] === a;
+      a.classList.toggle('is-active', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
     });
   }
+  function queueSpy() { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }
+  window.addEventListener('scroll', queueSpy, { passive: true });
+  window.addEventListener('resize', queueSpy);
+  window.addEventListener('load', queueSpy);
+  spy();
 
   /* ---------------- copy email ---------------- */
   var copyBtn = document.getElementById('copy-mail');

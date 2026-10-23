@@ -28,14 +28,14 @@
       document.documentElement.setAttribute('lang', l);
     })();
   </script>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="tokens.css?v=3">
+  <link rel="stylesheet" href="site.css?v=3">
   <link rel="stylesheet" href="detail.css">
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
-  <!-- TOP BAR (scrolls with the page) -->
+  <!-- TOP BAR (fixed; turns into an island after the first scroll) -->
   <header class="bar">
     <div class="wrap bar__in">
       <a class="brand" href="#top" aria-label="Bedirhan Çetin, back to top" data-i18n-aria="a.home">
@@ -671,7 +671,7 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
   <script src="projects.js"></script>
   <script src="field.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/animejs@4.2.2/dist/bundles/anime.umd.min.js"></script>
