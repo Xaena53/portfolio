@@ -182,31 +182,32 @@ body { padding-top: 73px; }
   perspective: 1600px; -webkit-mask: linear-gradient(to bottom, #000 58%, transparent 96%); mask: linear-gradient(to bottom, #000 66%, transparent 98%); }
 .plane { position: absolute; inset: 0; transform-style: preserve-3d;
   transform: rotateX(calc(18deg - var(--hp, 0) * 8deg)) rotateZ(-8deg) translate3d(2%, calc(var(--hp, 0) * -6%), 0) scale(.86); transform-origin: 2% 50%; }
-.shot { all: unset; position: absolute; width: 56%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; cursor: pointer; background: var(--surface-2);
-  transform: translate3d(0, 0, var(--z, 0px));
+.shot { all: unset; position: absolute; width: 45%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; cursor: pointer; background: var(--surface-2);
+  translate: 0 0 var(--z, 0px);
   box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(0, 0, 0, .55), 0 10px 24px -12px rgba(0, 0, 0, .35);
   transition: transform 700ms cubic-bezier(.16, 1, .3, 1), box-shadow var(--t-base); }
 :root[data-theme="light"] .shot { box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(40, 30, 15, .35), 0 10px 24px -12px rgba(40, 30, 15, .18); }
 .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--img-dim)); }
-.shot--ekt { left: 42%; top: 2%; }
+.shot--ekt { left: 46%; top: 24%; }
 .shot--ekt .shot__cap { top: 38px; }
 .shot--ekt img { top: 26px; height: calc(100% - 26px); object-position: top; }
-.shot--wf { left: 21%; top: 20%; }
-.shot--as { left: 0; top: 38%; }
-/* back layer: smaller cards deeper in the plane. Kurenai, AnimeRank and RepChat climb in a row above the front stair so each caption stays readable; Çakmak Pen sits low on the right */
-.shot--back { width: 34%; --z: -110px; }
-.shot--back img { filter: brightness(calc(var(--img-dim) * .78)); }
+.shot--wf { left: 23%; top: 37%; }
+.shot--as { left: 0; top: 50%; }
+/* back row: four smaller cards side by side above the front stair, so each one can be reached */
+.shot--back { width: 19.5%; }
+.shot--back img { filter: brightness(calc(var(--img-dim) * .9)); }
+.shot--back .shot__cap { left: 6px; top: 6px; padding: 4px 7px; font-size: .625rem; }
 .shot--back .shot__cap span { display: none; }
-.shot--ku { left: 1%; top: 6%; --z: -140px; }
-.shot--ar { left: 21%; top: -7%; --z: -120px; }
-.shot--rc { left: 41%; top: -20%; --z: -100px; }
-.shot--cp { left: 58%; top: 61%; --z: -60px; }
+.shot--ar { left: 0; top: 0; }
+.shot--rc { left: 21%; top: 0; }
+.shot--cp { left: 42%; top: 0; }
+.shot--ku { left: 63%; top: 0; }
 .shot__bar { position: absolute; left: 0; right: 0; top: 0; z-index: 1; display: flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
 .shot__bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-2); }
 .shot__bar span { margin: 0 auto; font-size: .6875rem; color: var(--text-3); }
 .shot__cap { position: absolute; left: 12px; top: 12px; z-index: 1; display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; background: rgba(12, 11, 10, .74); color: #ECE7DE; font-size: .75rem; line-height: 1.2; }
 .shot__cap b { font-weight: 500; color: #C9B593; }
-@media (hover: hover) { .shot:hover { transform: translate3d(0, -10px, calc(var(--z, 0px) + 40px)); } }
+@media (hover: hover) { .shot:hover { transform: translate3d(0, -10px, 40px); } }
 .shot:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
 
 @media (max-width: 1024px) {
@@ -223,7 +224,8 @@ body { padding-top: 73px; }
   .facts > div:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: var(--s-4); }
   .btn { height: 46px; padding: 0 18px; }
   .hero__vis { width: 150%; margin-left: 2%; aspect-ratio: 16 / 12; }
-  .shot { width: 60%; border-radius: 9px; }
+  .shot { width: 52%; border-radius: 9px; }
+  .shot--back { width: 19.5%; }
   .shot__cap { left: 8px; top: 8px; padding: 5px 8px; font-size: .6875rem; }
   .shot--ekt .shot__cap { top: 32px; }
 }
