@@ -20,7 +20,7 @@
     'rec.lang': 'Diller', 'rec.lang.v': 'Türkçe, İngilizce',
     'rec.os': 'Açık kaynak', 'rec.os.v': 'Aegis’te 1.765 test',
 
-    'hs.as': 'mAP@0.5 0,632', 'hs.wf': 'UE5 · M0, 34/34 test', 'hs.ekt': 'Ağustos 2026’dan beri canlı',
+    'hs.as': 'mAP@0.5 0,632', 'hs.wf': 'UE5 · M0, 34/34 test', 'hs.ekt': 'Ağu 2026’dan beri canlı',
     'hs.a1': 'Asfalya projesini aç', 'hs.a2': 'Warden of the Fields projesini aç', 'hs.a3': 'EKT Akademi projesini aç',
     'hs.a4': 'AnimeRank projesini aç', 'hs.a5': 'Kurenai projesini aç', 'hs.a6': 'Çakmak Pen projesini aç', 'hs.a7': 'RepChat projesini aç',
     'hs.ar': 'video platformu', 'hs.ku': 'yapay zekâ altyazı', 'hs.cp': 'kurumsal site', 'hs.rc': 'canlı destek',

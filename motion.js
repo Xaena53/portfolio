@@ -253,8 +253,12 @@
       .add('.hero__h .l2', { opacity: 1, y: 0, duration: 800 }, 420)
       .add('.hero__lead, .hero .cta-row', { opacity: 1, y: 0, duration: 700, delay: stagger(80) }, 560)
       .add('.facts > div', { opacity: 1, duration: 500, delay: stagger(60) }, 820)
-      .add(shots, { opacity: 1, y: 0, duration: 1300, delay: stagger(120, { from: 'last' }) }, 200);
-    setTimeout(function () { shots.forEach(function (el) { el.style.transform = ''; el.style.opacity = ''; }); }, 2200);
+      .add(shots, { opacity: 1, y: 0, duration: 1300, delay: stagger(90, { from: 'last' }) }, 200);
+    /* clear the inline transform only after the last card has finished (it depends on how many cards there are), otherwise it overrides the :hover lift */
+    var shotsDone = 200 + (shots.length - 1) * 90 + 1300 + 300;
+    var shotsClear = function () { shots.forEach(function (el) { el.style.transform = ''; el.style.opacity = ''; }); };
+    setTimeout(shotsClear, shotsDone);
+    setTimeout(shotsClear, shotsDone + 700);
     setTimeout(function () { l1.textContent = words.join(' '); }, 1800);
 
     // Section reveals: only what is below the fold starts hidden.

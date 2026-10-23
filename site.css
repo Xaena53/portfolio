@@ -181,36 +181,38 @@ body { padding-top: 73px; }
 .hero__vis { position: absolute; z-index: 1; top: 50%; left: max(54%, calc(50% + 60px)); width: min(940px, 64vw); aspect-ratio: 16 / 11; translate: 0 -46%;
   perspective: 1600px;
   /* bottom fade only. The mask image is 3x wide and 1.5x tall and the mask is not clipped to the box (mask-clip: no-clip), so cards that lift on hover or sit near the edges are never cut off */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 60.7%, transparent 82%); mask-image: linear-gradient(to bottom, #000 0, #000 60.7%, transparent 82%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 68.7%, transparent 84.7%); mask-image: linear-gradient(to bottom, #000 0, #000 68.7%, transparent 84.7%);
   -webkit-mask-size: 300% 150%; mask-size: 300% 150%; -webkit-mask-position: 50% 50%; mask-position: 50% 50%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; mask-clip: no-clip; }
 .plane { position: absolute; inset: 0; transform-style: preserve-3d;
   transform: rotateX(calc(18deg - var(--hp, 0) * 8deg)) rotateZ(-8deg) translate3d(2%, calc(var(--hp, 0) * -6%), 0) scale(.86); transform-origin: 2% 50%; }
-.shot { all: unset; position: absolute; width: 42%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; cursor: pointer; background: var(--surface-2);
-  translate: 0 0 var(--z, 0px);
+.shot { all: unset; position: absolute; width: 35%; aspect-ratio: 16 / 10; border-radius: 12px; cursor: pointer; translate: 0 0 var(--z, 2px); }
+/* The button is a fixed hit area. Only the inner layer lifts on hover, so the pointer never slides off the card and :hover cannot flicker */
+.shot__in { position: absolute; inset: 0; display: block; border-radius: 12px; overflow: hidden; background: var(--surface-2);
   box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(0, 0, 0, .55), 0 10px 24px -12px rgba(0, 0, 0, .35);
   transition: transform 700ms cubic-bezier(.16, 1, .3, 1), box-shadow var(--t-base); }
-:root[data-theme="light"] .shot { box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(40, 30, 15, .35), 0 10px 24px -12px rgba(40, 30, 15, .18); }
+:root[data-theme="light"] .shot__in { box-shadow: 0 0 0 1px var(--line-2), 0 30px 60px -30px rgba(40, 30, 15, .35), 0 10px 24px -12px rgba(40, 30, 15, .18); }
 .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--img-dim)); }
-.shot--ekt { left: 40%; top: 24%; }
+.shot--ekt { left: 47%; top: 34%; }
 .shot--ekt .shot__cap { top: 38px; }
 .shot--ekt img { top: 26px; height: calc(100% - 26px); object-position: top; }
-.shot--wf { left: 20%; top: 38%; }
-.shot--as { left: 0; top: 52%; }
+.shot--wf { left: 23.5%; top: 46%; }
+.shot--as { left: 0; top: 58%; }
 /* back row: four smaller cards that follow the front stair, each sitting just above the card below it */
-.shot--back { width: 19%; }
+.shot--back { width: 23.5%; }
 .shot--back img { filter: brightness(calc(var(--img-dim) * .9)); }
-.shot--back .shot__cap { left: 6px; top: 6px; padding: 4px 7px; font-size: .625rem; }
+.shot--back .shot__cap { left: 8px; top: 8px; padding: 5px 8px; font-size: .6875rem; }
 .shot--back .shot__cap span { display: none; }
-.shot--ar { left: 0; top: 32%; }
-.shot--rc { left: 20%; top: 18%; }
-.shot--cp { left: 40%; top: 4%; }
-.shot--ku { left: 60%; top: 4%; }
+.shot--ar { left: 0; top: 30%; }
+.shot--rc { left: 19%; top: 20%; }
+.shot--cp { left: 38%; top: 10%; }
+.shot--ku { left: 57%; top: 0; }
 .shot__bar { position: absolute; left: 0; right: 0; top: 0; z-index: 1; display: flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
 .shot__bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-2); }
 .shot__bar span { margin: 0 auto; font-size: .6875rem; color: var(--text-3); }
 .shot__cap { position: absolute; left: 12px; top: 12px; z-index: 1; display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; background: rgba(12, 11, 10, .74); color: #ECE7DE; font-size: .75rem; line-height: 1.2; }
+.shot__cap { white-space: nowrap; max-width: calc(100% - 20px); overflow: hidden; }
 .shot__cap b { font-weight: 500; color: #C9B593; }
-@media (hover: hover) { .shot:hover { transform: translate3d(0, -10px, 40px); } }
+@media (hover: hover) { .shot:hover .shot__in { transform: translate3d(0, -10px, 40px); } }
 .shot:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
 
 @media (max-width: 1024px) {
@@ -228,7 +230,7 @@ body { padding-top: 73px; }
   .btn { height: 46px; padding: 0 18px; }
   .hero__vis { width: 150%; margin-left: 2%; aspect-ratio: 16 / 12; }
   .shot { width: 52%; border-radius: 9px; }
-  .shot--back { width: 19%; }
+  .shot--back { width: 23.5%; }
   .shot__cap { left: 8px; top: 8px; padding: 5px 8px; font-size: .6875rem; }
   .shot--ekt .shot__cap { top: 32px; }
 }
