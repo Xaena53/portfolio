@@ -673,3 +673,13 @@ body { padding-top: 73px; }
 }
 @media (max-width: 760px) { .orb__p b.ic { width: 36px; height: 36px; border-radius: 10px; } .orb__p b.ic svg { width: 18px; height: 18px; } .orbit .orb__ring:first-child .orb__p b.ic { width: 40px; height: 40px; } }
 .cell--ku .ph { bottom: auto; top: -8%; }
+
+/* centre mark: a soft champagne glow, and on hover a handwritten signature that is written from left to right */
+.orb__c { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 0 26px -2px color-mix(in srgb, var(--accent) 34%, transparent), 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent); cursor: default; }
+:root[data-theme="light"] .orb__c { box-shadow: 0 0 22px -3px color-mix(in srgb, var(--accent) 28%, transparent); }
+.orb__sig { position: absolute; left: 50%; top: calc(50% + 36px); translate: -50% 0; rotate: -6deg; z-index: 0; pointer-events: none; white-space: nowrap;
+  font: 400 46px/1.1 "Mrs Saint Delafield", cursive; letter-spacing: 0; color: var(--accent-text); padding: 0 .3em; -webkit-text-stroke: .7px currentColor; text-shadow: 0 0 8px var(--bg), 0 0 3px var(--bg);
+  clip-path: inset(-30% 100% -30% 0); transition: clip-path 520ms cubic-bezier(.4, 0, .6, 1); }
+.orbit:has(.orb__c:hover) .orb__sig { clip-path: inset(-30% 0 -30% 0); transition: clip-path 1500ms cubic-bezier(.45, .05, .25, 1); }
+@media (prefers-reduced-motion: reduce) { .orb__sig { transition: none !important; } }
+@media (max-width: 760px) { .orb__sig { font-size: 38px; } }
